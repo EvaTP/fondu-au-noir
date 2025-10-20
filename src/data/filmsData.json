@@ -1,0 +1,292 @@
+[
+  {
+    "id": 1,
+    "title": "Une femme dangereuse (They Drive by Night)",
+    "year": 1940,
+    "director": "Raoul Walsh",
+    "question": "Quel métier exercent George Raft et Humphrey Bogart dans le film❓",
+    "options": ["Camionneurs", "Policiers", "Mécaniciens", "Gangsters"],
+    "answer": "Camionneurs",
+    "era": "classic noir",
+    "image": "/affiches/1_1940-drive-by-night.png"
+  },
+  {
+    "id": 2,
+    "title": "Le Faucon maltais (The Maltese Falcon)",
+    "year": 1941,
+    "director": "John Huston",
+    "question": "Qu'est ce que le faucon maltais❓",
+    "options": [
+      "Un bateau faisant de la contrebande",
+      "Le surnom du détective",
+      "Une statuette",
+      "Un code secret"
+    ],
+    "answer": "Une statuette",
+    "era": "classic noir",
+    "image": "/affiches/2_1941-maltese-falcon.png"
+  },
+  {
+    "id": 3,
+    "title": "Laura",
+    "year": 1944,
+    "director": "Otto Preminger",
+    "question": "Quel élément relance l'enquête❓",
+    "options": [
+      "La découverte d'un journal intime",
+      "Le retour de Laura",
+      "Les aveux du fiancé",
+      "Une empreinte digitale"
+    ],
+    "answer": "Le retour de Laura",
+    "era": "classic noir",
+    "image": "/affiches/3_1944-Laura.png"
+  },
+  {
+    "id": 4,
+    "title": "Assurance sur la mort (Double Indemnity)",
+    "year": 1944,
+    "director": "Billy Wilder",
+    "question": "Quel objet est au centre du crime dans 'Assurance sur la mort'❓",
+    "options": [
+      "Un collier volé",
+      "Une police d'assurance",
+      "Une arme cachée",
+      "Un testament"
+    ],
+    "answer": "Une police d'assurance",
+    "era": "classic noir",
+    "image": "/affiches/4_1944-Double-indemnity.png"
+  },
+  {
+    "id": 5,
+    "title": "Le Roman de Mildred Pierce (Mildred Pierce)",
+    "year": 1945,
+    "director": "Michael Curtiz",
+    "question": "Le film mélange le film noir à un autre genre, lequel❓",
+    "options": [
+      "Le western",
+      "La comédie musicale",
+      "Le mélodrame",
+      "Le film de guerre"
+    ],
+    "answer": "Le mélodrame",
+    "era": "classic noir",
+    "image": "/affiches/5_1945-Mildred-Pierce.png"
+  },
+  {
+    "id": 6,
+    "title": "Le Grand Sommeil (The Big Sleep)",
+    "year": 1946,
+    "director": "Howard Hawks",
+    "question": "Pourquoi Philip Marlowe est-il engagé au début de l’histoire❓",
+    "options": [
+      "Pour retrouver un objet volé",
+      "Pour enquêter sur un meurtre",
+      "Pour protéger la fille du général",
+      "Pour résoudre une affaire de fraude"
+    ],
+    "answer": "Pour protéger la fille du général",
+    "era": "classic noir",
+    "image": "/affiches/6_1946-Big-Sleep.png"
+  },
+  {
+    "id": 7,
+    "title": "Le Facteur sonne toujours deux fois (The Postman Always Rings Twice)",
+    "year": 1946,
+    "director": "Tay Garnett",
+    "question": "Quel est le projet du couple protagoniste❓",
+    "options": [
+      "Ouvrir un restaurant",
+      "Tuer le mari gênant",
+      "Voler la caisse",
+      "Fuir au Mexique"
+    ],
+    "answer": "Tuer le mari gênant",
+    "era": "classic noir",
+    "image": "/affiches/7_1946-Postman-always-rings-twice.png"
+  },
+  {
+    "id": 8,
+    "title": "La Dame de Shanghai (The Lady from Shanghai)",
+    "year": 1947,
+    "director": "Orson Welles",
+    "question": "Quelle scène emblématique conclut le film❓",
+    "options": [
+      "Course-poursuite",
+      "Bataille sur un bateau",
+      "Confrontation dans une galerie de miroirs",
+      "Explosion"
+    ],
+    "answer": "Confrontation dans une galerie de miroirs",
+    "era": "classic noir",
+    "image": "/affiches/8_1947-Lady-from-Shanghai.png"
+  },
+  {
+    "id": 9,
+    "title": "Le Troisième Homme (The Third Man)",
+    "year": 1949,
+    "director": "Carol Reed",
+    "question": "Dans quelle ville se déroule 'Le Troisième Homme'❓",
+    "options": ["Vienne", "Berlin", "Paris", "New York"],
+    "answer": "Vienne",
+    "era": "classic noir",
+    "image": "/affiches/9_1949-Third-man.png"
+  },
+  {
+    "id": 10,
+    "title": "L'Enfer est à lui (White Heat)",
+    "year": 1949,
+    "director": "Raoul Walsh",
+    "question": "Quelle célèbre réplique clôt le film❓",
+    "options": [
+      "You talkin' to me?",
+      "Forget it, Jake, it's Chinatown.",
+      "Top of the world, Ma!",
+      "I'll be back."
+    ],
+    "answer": "Top of the world, Ma!",
+    "era": "classic noir",
+    "image": "/affiches/10_1949-White-heat.png"
+  },
+  {
+    "id": 11,
+    "title": "Boulevard du Crépuscule (Sunset Boulevard)",
+    "year": 1950,
+    "director": "Billy Wilder",
+    "question": "Quelle particularité narrative ouvre le film❓",
+    "options": [
+      "Un flash-back raconté par un journaliste",
+      "Une lettre retrouvée dans un manoir",
+      "Un monologue de Norma devant sa caméra",
+      "Une voix off d’un narrateur… déjà mort"
+    ],
+    "answer": "Une voix off d’un narrateur… déjà mort",
+    "era": "classic noir",
+    "image": "/affiches/11_1950-Sunset-Boulevard.png"
+  },
+  {
+    "id": 12,
+    "title": "Quand la ville dort (The Asphalt Jungle)",
+    "year": 1950,
+    "director": "John Huston",
+    "question": "Quelle future star apparaît dans un petit rôle❓",
+    "options": [
+      "Audrey Hepburn",
+      "Marilyn Monroe",
+      "Elizabeth Taylor",
+      "Grace Kelly"
+    ],
+    "answer": "Marilyn Monroe",
+    "era": "classic noir",
+    "image": "/affiches/12_1950-Asphalt-jungle.png"
+  },
+  {
+    "id": 13,
+    "title": "Panique dans la rue (Panic in the Streets)",
+    "year": 1950,
+    "director": "Elia Kazan",
+    "question": "Quel danger menace la ville dans ce film❓",
+    "options": ["Une épidémie", "Une guerre", "Une inondation", "Un incendie"],
+    "answer": "Une épidémie",
+    "era": "classic noir",
+    "image": "/affiches/13_1950-Panic-in-the-streets.png"
+  },
+  {
+    "id": 14,
+    "title": "L'Affaire Cicéron (Five Fingers)",
+    "year": 1952,
+    "director": "Joseph L. Mankiewicz",
+    "question": "Quel est le métier du héros de 'L'Affaire Cicéron'❓",
+    "options": ["Détective privé", "Journaliste", "Avocat", "Espion"],
+    "answer": "Espion",
+    "era": "classic noir",
+    "image": "/affiches/14_1952-Five-fingers.png"
+  },
+  {
+    "id": 15,
+    "title": "Autopsie d'un meurtre (Anatomy of a Murder)",
+    "year": 1959,
+    "director": "Otto Preminger",
+    "question": "Quel thème central est exploré dans le film❓",
+    "options": [
+      "La vie à Hollywood",
+      "L’espionnage",
+      "Le pouvoir politique",
+      "La quête de vérité"
+    ],
+    "answer": "La quête de vérité",
+    "era": "classic noir",
+    "image": "/affiches/15_1959-Anatomy-of-a-murder.png"
+  },
+  {
+    "id": 16,
+    "title": "Au revoir ma jolie (Farewell, My Lovely)",
+    "year": 1975,
+    "director": "Dick Richards",
+    "question": "Quel détective célèbre incarne R. Mitchum❓",
+    "options": ["Sam Spade", "Mike Hammer", "Perry Mason", "Philip Marlowe"],
+    "answer": "Philip Marlowe",
+    "era": "neo-noir",
+    "image": "/affiches/16_1975-Farewell-my-lovely.png"
+  },
+  {
+    "id": 17,
+    "title": "L.A. Confidential",
+    "year": 1997,
+    "director": "Curtis Hanson",
+    "question": "Dans L.A. Confidential, quelle période de l’histoire est montrée❓",
+    "options": ["Années 1920", "Années 1950", "Années 1970", "Années 1990"],
+    "answer": "Années 1950",
+    "era": "neo-noir",
+    "image": "/affiches/17_1997-LA-confidential.png"
+  },
+  {
+    "id": 18,
+    "title": "Zodiac",
+    "year": 2007,
+    "director": "David Fincher",
+    "question": "Comment les enquêteurs tentent-ils d’identifier le tueur du Zodiaque❓",
+    "options": [
+      "Par les témoignages des victimes",
+      "En le suivant secrètement",
+      "Grâce à la chance",
+      "En analysant ses lettres et codes"
+    ],
+    "answer": "En analysant ses lettres et codes",
+    "era": "neo-noir",
+    "image": "/affiches/18_2007-Zodiac.png"
+  },
+  {
+    "id": 19,
+    "title": "Drive",
+    "year": 2011,
+    "director": "Nicolas Winding Refn",
+    "question": "Quel est l’axe principal de l’intrigue de Drive, typique du néo-noir❓",
+    "options": [
+      "Une enquête policière classique",
+      "Une passion destructrice",
+      "Un rallye de voitures",
+      "La survie d’un personnage solitaire"
+    ],
+    "answer": "La survie d’un personnage solitaire",
+    "era": "neo-noir",
+    "image": "/affiches/19_2011-Drive.png"
+  },
+  {
+    "id": 20,
+    "title": "The Batman",
+    "year": 2022,
+    "director": "Matt Reeves",
+    "question": "Quel célèbre énigmeur affronte Batman❓",
+    "options": [
+      "Le Pingouin",
+      "Le Sphinx (The Riddler)",
+      "Le Joker",
+      "Double-Face"
+    ],
+    "answer": "Le Sphinx (The Riddler)",
+    "era": "neo-noir",
+    "image": "/affiches/20_2022-The-Batman.png"
+  }
+]

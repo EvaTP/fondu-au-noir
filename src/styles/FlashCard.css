@@ -1,0 +1,225 @@
+.flashcard-container {
+  perspective: 1000px;
+  margin: 50px 0;
+  width: 300px;
+}
+
+.flashcard {
+  position: relative;
+  width: 500px;
+  height: 800px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+/* Quand on ajoute la classe .flipped au parent */
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Cache le dos pendant la rotation */
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  /* transition: transform 0.6s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+  /* box-sizing: border-box; */
+}
+
+/* FRONT */
+.flashcard-front {
+  background: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  text-align: center;
+  overflow: visible;
+}
+
+/* Images */
+
+/* conteneur pour l'image avec le cadre */
+.image-frame {
+  display: inline-block; /* s'adapte à la taille de l'image */
+  margin: 0 auto 15px auto;
+
+  /* Cadre photo vintage autour du conteneur */
+  border: 12px solid #f4f1ea;
+  box-shadow: 0 0 0 2px #8b7355, 0 0 0 3px #d4c5a9,
+    inset 0 0 30px rgba(0, 0, 0, 0.15), 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  border-radius: 2px;
+  transform: rotate(-0.5deg);
+  transition: transform 0.3s ease;
+}
+
+.flashcard-front img {
+  display: block; /* ✨ Enlève l'espace en bas de l'image */
+  width: auto; /* ✨ Largeur automatique selon ratio */
+  max-width: 280px; /* ✨ Largeur max pour contrôler la taille */
+  height: 320px; /* ✨ Hauteur fixe */
+  object-fit: contain; /* ✨ Garde l'image entière */
+  /* effet photo vieillie */
+  filter: sepia(0.15) contrast(1.1);
+}
+
+/* BACK */
+.flashcard-back {
+  background: #333;
+  color: #fff;
+  transform: rotateY(
+    180deg
+  ); /* Le verso est tourné à 180° pour être visible au flip */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Titres et texte */
+.flashcard h3 {
+  font-size: 1.5rem;
+  margin: 0.4rem 0;
+  line-height: 1.3;
+}
+
+.flashcard h4 {
+  font-size: 2rem;
+  margin: 0.2rem 0;
+  font-weight: 400;
+  color: #fff;
+}
+
+.flashcard p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  line-height: 20px;
+}
+.flashcard-front .question {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.flashcard-back .answer {
+  margin: 15px 0;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #ffa500;
+  line-height: 40px;
+}
+
+/* BOUTONS */
+/* conteneur des boutons */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* espace entre les boutons */
+  /* margin-top: auto; */
+  justify-content: center; /* centrage horizontal */
+  padding: 0 10px 10px 10px;
+  width: 100%;
+}
+
+.flashcard-front button {
+  background-color: #646cff;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%; /* tous les boutons même largeur */
+  text-align: center;
+  line-height: 1.3; /* Meilleure gestion du texte multiligne */
+  min-height: 48px; /* Hauteur minimale pour cohérence */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcard-front button:hover {
+  background-color: #535bf2;
+  /* transform: scale(1.05); */
+  transform: translateY(-3px); /* Effet de levée au hover */
+  box-shadow: 0 4px 8px rgba(100, 108, 255, 0.3);
+}
+
+/* Option REJOUER */
+.flashcard-back .retry-info {
+  font-size: 1.8rem;
+  margin: 20px 0;
+  padding: 15px;
+}
+
+.flashcard-back .retry-info strong {
+  color: #ffa500;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.flashcard-back .retry-button {
+  background-color: #646cff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  border: none;
+  padding: 15px 22px;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.retry-button:hover {
+  background-color: #535bf2;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .flashcard {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    min-height: 650px;
+  }
+
+  .flashcard-front img {
+    height: 200px;
+  }
+}

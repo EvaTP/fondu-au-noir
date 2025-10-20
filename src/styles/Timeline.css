@@ -1,0 +1,316 @@
+/* ************************** */
+/* Timeline container global */
+/* ************************** */
+.timeline-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 100px; /* espace pour le score fixe en haut */
+}
+
+/* ************************ */
+/* Timeline ligne centrale  */
+/* ************************ */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  bottom: 0;
+  width: 3px;
+  background-color: #fff;
+  /* background: linear-gradient(to bottom, #333, #666); */
+  transform: translateX(-50%);
+}
+
+/* Décoration début de ligne */
+.timeline-line::before {
+  content: "🎬";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  background: #1a1a1a;
+  padding: 20px 35px;
+  border-radius: 50%;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.timeline-line::after {
+  content: "🏁";
+  position: absolute;
+  bottom: -120px; /* espace  entre le drapeau et la dernière flashcard */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  background: #1a1a1a;
+  padding: 20px 35px;
+  border-radius: 50%;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* ********************************************* */
+/* Timeline : container année + dot + FlashCard */
+/* ********************************************* */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* margin: 800px 0; */
+  margin-bottom: 200px;
+  margin-top: 160px;
+  min-height: 700px;
+  z-index: 1;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 500px; /* augmente l’espace sous la dernière flashcard */
+}
+
+.timeline-year {
+  position: absolute;
+  font-family: "Jolly Lodger", cursive;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: bold;
+  top: 0;
+  /*  transform: translateY(-50%); centrage vertical parfait */
+  transform: translateY(0); /* pas de centrage vertical */
+  z-index: 10;
+  white-space: nowrap; /* empêche le retour à la ligne */
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  left: 50%; /* centre horizontalement sur la timeline */
+  top: 0;
+  /* transform: translateX(-50%); */
+  border: 4px solid #ffd700;
+  /* transform: translate(-50%, -50%); centrage parfait */
+  transform: translateX(-50%); /* seulement centrage horizontal */
+  z-index: 5;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Années à GAUCHE pour les items impairs */
+.timeline-item:nth-child(odd) .timeline-year {
+  right: calc(50% + 70px); /* À gauche du dot, avec espacement */
+  text-align: right;
+}
+
+/* Années à DROITE pour les items pairs */
+.timeline-item:nth-child(even) .timeline-year {
+  left: calc(50% + 70px); /* À droite du dot, avec espacement */
+  text-align: left;
+}
+
+/* ****************************** */
+/* Positionnement des FlashCards */
+/* ****************************** */
+/* à gauche : items impairs */
+.timeline-item .flashcard.left {
+  position: absolute;
+  right: calc(50% + 120px);
+  top: 0;
+  transform: translateY(0); /* pas de centrage vertical */
+}
+/* à droite : items pairs */
+.timeline-item .flashcard.right {
+  position: absolute;
+  left: calc(50% + 90px); /* espace depuis le centre */
+  top: 0;
+  transform: translateY(0); /* pas de centrage vertical */
+}
+
+/* ****** */
+/* Score */
+/* ****** */
+.score {
+  position: fixed;
+  top: 200px;
+  right: 40px;
+  text-align: center;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: yellow;
+  margin: 40px 10px;
+  max-width: 400px;
+  border: 3px solid #666;
+  box-shadow: 0 4px 12px rgba(#666, #666, #666, 0.5);
+  min-width: 250px;
+  z-index: 1000;
+}
+
+/* ✨ NOUVEAU : Conteneur du bouton reset en bas de page */
+.reset-container {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 80px 0;
+  padding: 20px;
+}
+
+/* ********************** */
+/* Bouton REJOUER (reset) */
+/* ********************** */
+
+.reset-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 80px 0; /* grande marge en haut pour séparer du dernier item */
+  padding: 20px;
+  z-index: 10;
+}
+
+/* Décoration fin de ligne */
+/* .reset-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff 0px,
+    #fff 20px,
+    #000 20px,
+    #000 40px
+  );
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+} */
+
+/* AJOUT : Drapeau à damier sur la ligne d'arrivée */
+/* .reset-container::after {
+  content: "🏁";
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: wave 2s ease-in-out infinite;
+} */
+
+/* @keyframes wave {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(5deg);
+  }
+} */
+
+.reset-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: none;
+  padding: 30px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  position: relative;
+}
+
+.reset-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.reset-button:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ***************** */
+/* RESPONSIVE DESIGN */
+/* ***************** */
+
+/* Breakpoint pour tel mobiles */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding-top: 140px;
+  }
+  .timeline-line {
+    left: 30px;
+    top: 140px;
+  }
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 80px;
+    margin-bottom: 90px; /* moins d'espace en mobile */
+    min-height: auto; /* hauteur flexible */
+  }
+  .timeline-year {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    transform: none;
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+  .timeline-dot {
+    left: 30px;
+    top: 30px;
+  }
+
+  /* FlashCards empilées verticalement en mobile */
+  .timeline-item .flashcard.left,
+  .timeline-item .flashcard.right {
+    position: static;
+    transform: none;
+    margin: 20px 0 0 0;
+    width: 100%;
+    max-width: 400px;
+  }
+  .score {
+    top: 15px;
+    right: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    min-width: auto;
+  }
+  .reset-container {
+    margin: 40px 0 60px 0;
+  }
+  .reset-button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+}
+
+/* Breakpoint intermédiaire pour tablettes */
+@media (max-width: 1200px) {
+  .timeline-container {
+    max-width: 100%;
+  }
+  .timeline-item .flashcard.left {
+    right: calc(50% + 80px);
+  }
+  .timeline-item .flashcard.right {
+    left: calc(50% + 60px);
+  }
+}
