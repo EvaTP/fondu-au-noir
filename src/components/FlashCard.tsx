@@ -5,12 +5,14 @@ import "@/styles/FlashCard.css";
 interface FlashCardProps {
   film: Film;
   onCorrect: () => void;
+  onAnswer: () => void;
   position: "left" | "right";
 }
 
 export default function FlashCard({
   film,
   onCorrect,
+  onAnswer,
   position,
 }: FlashCardProps) {
   const [flipped, setFlipped] = useState(false);
@@ -22,6 +24,7 @@ export default function FlashCard({
     setSelectedOption(option);
     setFlipped(true);
     setAttempts((prev) => prev + 1);
+    onAnswer(); // informe la Timeline que le joueur a commencé
 
     if (option === film.answer) {
       setHasAnsweredCorrectly(true);

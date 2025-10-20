@@ -15,8 +15,9 @@
 .timeline-line {
   position: absolute;
   left: 50%;
-  top: 80px;
-  bottom: 0;
+  top: 60px;
+  /* bottom: 200px; */
+  height: calc(100% + 40px); /* timeline plus longue */
   width: 3px;
   background-color: #fff;
   /* background: linear-gradient(to bottom, #333, #666); */
@@ -41,7 +42,7 @@
 .timeline-line::after {
   content: "🏁";
   position: absolute;
-  bottom: -120px; /* espace  entre le drapeau et la dernière flashcard */
+  bottom: -80px; /* espace  entre le drapeau et la dernière flashcard */
   left: 50%;
   transform: translateX(-50%);
   font-size: 4rem;
@@ -53,7 +54,7 @@
 }
 
 /* ********************************************* */
-/* Timeline : container année + dot + FlashCard */
+/* Timeline : container année + dot + FlashCard  */
 /* ********************************************* */
 .timeline-item {
   position: relative;
@@ -62,8 +63,8 @@
   justify-content: center;
   /* margin: 800px 0; */
   margin-bottom: 200px;
-  margin-top: 160px;
-  min-height: 700px;
+  margin-top: 190px;
+  min-height: 750px;
   z-index: 1;
 }
 
@@ -78,8 +79,8 @@
   font-size: 5rem;
   font-weight: bold;
   top: 0;
-  /*  transform: translateY(-50%); centrage vertical parfait */
-  transform: translateY(0); /* pas de centrage vertical */
+  transform: translateY(-30%); /* centrage vertical parfait */
+  /*transform: translateY(0);  pas de centrage vertical */
   z-index: 10;
   white-space: nowrap; /* empêche le retour à la ligne */
 }
@@ -167,9 +168,9 @@
   position: relative;
   display: flex;
   justify-content: center;
-  margin: 100px 0 80px 0; /* grande marge en haut pour séparer du dernier item */
+  margin: 200px 0 150px 0; /* grande marge en haut pour séparer du dernier item */
   padding: 20px;
-  z-index: 10;
+  z-index: 100;
 }
 
 /* Décoration fin de ligne */
@@ -227,7 +228,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 1000;
+  z-index: 100;
   position: relative;
 }
 
