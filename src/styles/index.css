@@ -1,3 +1,5 @@
+/* index.css : styles globaux */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +13,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --footer-height: 120px;
 }
 
 a {
@@ -31,21 +35,21 @@ body {
 } */
 
 body {
-  display: flex;
-  place-items: center;
+  /* display: flex;
+  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
   color: white;
   font-family: sans-serif;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   background-color: #1a1a1a;
 }
-/* 
-h1 {
-  font-family: "Jolly Lodger", cursive;
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
+
+/* ✨ MODIFIÉ : app-container pousse le footer en bas */
+.app-container {
+  flex: 1; /* Prend tout l'espace disponible */
+  width: 100%;
+}
 
 h1 {
   font-family: "Jolly Lodger", system-ui;
@@ -90,6 +94,44 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: #eee;
+  padding: 15px 10px;
+  text-align: center;
+  width: 100%;
+  margin-top: 220px;
+}
+
+.footer-content {
+  max-width: 1280px; /* même largeur que le #root */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-links {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
 }
 
 @media (prefers-color-scheme: light) {

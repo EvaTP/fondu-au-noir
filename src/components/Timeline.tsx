@@ -48,13 +48,14 @@ const Timeline: React.FC<TimelineProps> = ({ films }) => {
               onCorrect={handleCorrect}
               onAnswer={handleAnswer}
               position={position}
+              index={index} // passe l'index pour le délai
             />
           </div>
         );
       })}
 
       <div className="score">
-        bonnes réponses : ✅ {correctCount} / {films.length}
+        Bonnes réponses : <br /> ✅ {correctCount} / {films.length}
       </div>
 
       {/* Bouton Reset en bas de page, visible seulement si le quiz a commencé */}

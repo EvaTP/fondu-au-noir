@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, easeOut } from "framer-motion";
 import type { Film } from "@/types/Film";
 import "@/styles/FlashCard.css";
 
@@ -7,6 +8,7 @@ interface FlashCardProps {
   onCorrect: () => void;
   onAnswer: () => void;
   position: "left" | "right";
+  index: number; // pour gérer le délai d'apparition de la première carte
 }
 
 export default function FlashCard({
@@ -14,6 +16,7 @@ export default function FlashCard({
   onCorrect,
   onAnswer,
   position,
+  index,
 }: FlashCardProps) {
   const [flipped, setFlipped] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -33,10 +36,8 @@ export default function FlashCard({
   };
 
   const isCorrect = selectedOption === film.answer;
-
   // On peut rejouer si c'est la première tentative (attempts === 1) et qu'on n'a pas trouvé
   const canRetry = attempts === 1 && !hasAnsweredCorrectly;
-
   // C'est la dernière tentative (2ème essai) qui a échoué
   const isLastAttemptFailed = attempts === 2 && !hasAnsweredCorrectly;
 
@@ -46,8 +47,33 @@ export default function FlashCard({
     // IMPORTANT : on ne reset PAS attempts, on garde le compteur
   };
 
+  // Configuration de l'animation d'entrée
+  const slideVariants = {
+    hidden: {
+      opacity: 0,
+      x: position === "left" ? -100 : 100, // Vient de gauche ou droite selon position
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: easeOut, // Easing doux
+        delay: index === 0 ? 1.5 : 0, // la première card attend 1.5s
+      },
+    },
+  };
+
   return (
-    <div className={`flashcard ${position} ${flipped ? "flipped" : ""}`}>
+    <motion.div
+      className={`flashcard ${position} ${flipped ? "flipped" : ""}`}
+      variants={slideVariants}
+      initial="hidden"
+      whileInView="visible" // ✨ Animation au scroll (viewport detection)
+      viewport={{ once: true, margin: "-100px" }} // once: true = animation une seule fois
+    >
       <div className="flashcard-inner">
         {/* FRONT */}
         <div className="flashcard-front">
@@ -59,7 +85,6 @@ export default function FlashCard({
           </h3>
           <h3>de {film.director}</h3>
           <p className="question">{film.question}</p>
-
           <div className="options">
             {film.options.map((option, idx) => (
               <button key={idx} onClick={() => handleClick(option)}>
@@ -91,7 +116,6 @@ export default function FlashCard({
               </button>
             </>
           )}
-
           {/* Deuxième tentative échouée - affiche la bonne réponse */}
           {isLastAttemptFailed && (
             <p className="answer">
@@ -100,6 +124,6 @@ export default function FlashCard({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
