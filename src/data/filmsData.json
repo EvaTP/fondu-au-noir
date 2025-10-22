@@ -8,7 +8,12 @@
     "options": ["Camionneurs", "Policiers", "Mécaniciens", "Gangsters"],
     "answer": "Camionneurs",
     "era": "classic noir",
-    "image": "/affiches/1_1940-drive-by-night.png"
+    "image": "/affiches/1_1940-drive-by-night.png",
+    "details": {
+      "synopsis": "Deux frères camionneurs peinent à joindre les deux bouts et se retrouvent pris dans un engrenage de jalousie et de meurtre.",
+      "trivia": "Humphrey Bogart n’était pas encore une star : ce film annonçait sa future ascension.",
+      "link": "https://www.imdb.com/fr/title/tt0033149/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Drive%2520by%2520night"
+    }
   },
   {
     "id": 2,
@@ -24,7 +29,12 @@
     ],
     "answer": "Une statuette",
     "era": "classic noir",
-    "image": "/affiches/2_1941-maltese-falcon.png"
+    "image": "/affiches/2_1941-maltese-falcon.png",
+    "details": {
+      "synopsis": "Le détective Sam Spade enquête sur le meurtre de son associé et découvre une chasse à une précieuse statuette, convoitée par tous.",
+      "trivia": "Premier film de John Huston, il établit Humphrey Bogart comme l’archétype du détective cynique.",
+      "link": "https://www.imdb.com/title/tt0033870/"
+    }
   },
   {
     "id": 3,
@@ -40,7 +50,12 @@
     ],
     "answer": "Le retour de Laura",
     "era": "classic noir",
-    "image": "/affiches/3_1944-Laura.png"
+    "image": "/affiches/3_1944-Laura.png",
+    "details": {
+      "synopsis": "Un détective tombe amoureux d’une femme qu’il croit morte, jusqu’à ce qu’elle réapparaisse mystérieusement.",
+      "trivia": "Le portrait de Laura, omniprésent à l’écran, a marqué les spectateurs et symbolise l’obsession du héros.",
+      "link": "https://www.imdb.com/title/tt0037008/"
+    }
   },
   {
     "id": 4,
@@ -56,7 +71,12 @@
     ],
     "answer": "Une police d'assurance",
     "era": "classic noir",
-    "image": "/affiches/4_1944-Double-indemnity.png"
+    "image": "/affiches/4_1944-Double-indemnity.png",
+    "details": {
+      "synopsis": "Un vendeur d’assurances et une femme fatale s’associent pour tuer le mari de celle-ci et toucher la prime.",
+      "trivia": "Ce film a défini les codes du film noir : flashback, narration en voix off et femme fatale manipulatrice.",
+      "link": "https://www.imdb.com/title/tt0036775/"
+    }
   },
   {
     "id": 5,
@@ -72,7 +92,12 @@
     ],
     "answer": "Le mélodrame",
     "era": "classic noir",
-    "image": "/affiches/5_1945-Mildred-Pierce.png"
+    "image": "/affiches/5_1945-Mildred-Pierce.png",
+    "details": {
+      "synopsis": "Une mère dévouée se sacrifie pour sa fille ambitieuse et ingrate, jusqu’au drame.",
+      "trivia": "Joan Crawford a remporté l’Oscar pour ce rôle, relançant sa carrière.",
+      "link": "https://www.imdb.com/title/tt0037913/"
+    }
   },
   {
     "id": 6,
@@ -88,7 +113,12 @@
     ],
     "answer": "Pour protéger la fille du général",
     "era": "classic noir",
-    "image": "/affiches/6_1946-Big-Sleep.png"
+    "image": "/affiches/6_1946-Big-Sleep.png",
+    "details": {
+      "synopsis": "Philip Marlowe plonge dans une enquête labyrinthique mêlant chantage, meurtre et séduction.",
+      "trivia": "Même les acteurs ne comprenaient pas complètement l’intrigue : Hawks en a fait une force du film.",
+      "link": "https://www.imdb.com/title/tt0038355/"
+    }
   },
   {
     "id": 7,
@@ -104,7 +134,12 @@
     ],
     "answer": "Tuer le mari gênant",
     "era": "classic noir",
-    "image": "/affiches/7_1946-Postman-always-rings-twice.png"
+    "image": "/affiches/7_1946-Postman-always-rings-twice.png",
+    "details": {
+      "synopsis": "Un vagabond et une femme mariée s’aiment passionnément et décident de tuer le mari pour vivre libres.",
+      "trivia": "Adapté du roman de James M. Cain, déjà censuré pour son audace morale.",
+      "link": "https://www.imdb.com/title/tt0038854/"
+    }
   },
   {
     "id": 8,
@@ -120,7 +155,12 @@
     ],
     "answer": "Confrontation dans une galerie de miroirs",
     "era": "classic noir",
-    "image": "/affiches/8_1947-Lady-from-Shanghai.png"
+    "image": "/affiches/8_1947-Lady-from-Shanghai.png",
+    "details": {
+      "synopsis": "Un marin naïf est pris dans une conspiration criminelle orchestrée par une femme fatale.",
+      "trivia": "La célèbre scène des miroirs est devenue une référence visuelle du film noir.",
+      "link": "https://www.imdb.com/title/tt0040525/"
+    }
   },
   {
     "id": 9,
@@ -131,7 +171,12 @@
     "options": ["Vienne", "Berlin", "Paris", "New York"],
     "answer": "Vienne",
     "era": "classic noir",
-    "image": "/affiches/9_1949-Third-man.png"
+    "image": "/affiches/9_1949-Third-man.png",
+    "details": {
+      "synopsis": "Un écrivain américain enquête à Vienne sur la mort de son ami.",
+      "trivia": "La musique à la cithare est devenue iconique, tout comme les scènes dans les égouts et la vue de la grande roue du Prater.",
+      "link": "https://www.imdb.com/title/tt0041959/"
+    }
   },
   {
     "id": 10,
@@ -147,7 +192,12 @@
     ],
     "answer": "Top of the world, Ma!",
     "era": "classic noir",
-    "image": "/affiches/10_1949-White-heat.png"
+    "image": "/affiches/10_1949-White-heat.png",
+    "details": {
+      "synopsis": "Cody Jarrett, gangster violent et instable, entretient une relation fusionnelle avec sa mère.",
+      "trivia": "La réplique finale de James Cagney est l’une des plus célèbres du cinéma américain.",
+      "link": "https://www.imdb.com/title/tt0042041/"
+    }
   },
   {
     "id": 11,
@@ -163,7 +213,12 @@
     ],
     "answer": "Une voix off d’un narrateur… déjà mort",
     "era": "classic noir",
-    "image": "/affiches/11_1950-Sunset-Boulevard.png"
+    "image": "/affiches/11_1950-Sunset-Boulevard.png",
+    "details": {
+      "synopsis": "Un scénariste désabusé devient le jouet d’une ancienne star du muet vivant recluse dans son manoir.",
+      "trivia": "Gloria Swanson, actrice du muet, joue une version tragique d’elle-même.",
+      "link": "https://www.imdb.com/title/tt0043014/"
+    }
   },
   {
     "id": 12,
@@ -179,7 +234,12 @@
     ],
     "answer": "Marilyn Monroe",
     "era": "classic noir",
-    "image": "/affiches/12_1950-Asphalt-jungle.png"
+    "image": "/affiches/12_1950-Asphalt-jungle.png",
+    "details": {
+      "synopsis": "Un braquage méticuleusement planifié tourne mal, révélant la cupidité et la trahison des criminels impliqués.",
+      "trivia": "Le film est souvent considéré comme le modèle du 'film de casse' moderne. La performance de Sterling Hayden a inspiré de nombreux rôles similaires dans les décennies suivantes.",
+      "link": "https://www.imdb.com/title/tt0042208/"
+    }
   },
   {
     "id": 13,
@@ -190,7 +250,12 @@
     "options": ["Une épidémie", "Une guerre", "Une inondation", "Un incendie"],
     "answer": "Une épidémie",
     "era": "classic noir",
-    "image": "/affiches/13_1950-Panic-in-the-streets.png"
+    "image": "/affiches/13_1950-Panic-in-the-streets.png",
+    "details": {
+      "synopsis": "Un médecin militaire et un policier doivent retrouver un meurtrier porteur de la peste avant que l'épidémie ne se propage à la population de La Nouvelle-Orléans.",
+      "trivia": "Tourné en décors réels, le film capte l’atmosphère moite et inquiétante des docks de la ville. Kazan utilisa de nombreux acteurs non professionnels.",
+      "link": "https://www.imdb.com/title/tt0042832/"
+    }
   },
   {
     "id": 14,
@@ -201,7 +266,12 @@
     "options": ["Détective privé", "Journaliste", "Avocat", "Espion"],
     "answer": "Espion",
     "era": "classic noir",
-    "image": "/affiches/14_1952-Five-fingers.png"
+    "image": "/affiches/14_1952-Five-fingers.png",
+    "details": {
+      "synopsis": "Un valet de l’ambassade britannique à Ankara vend des secrets militaires aux Allemands durant la Seconde Guerre mondiale.",
+      "trivia": "Inspiré d’une histoire vraie, le film valut à James Mason l’un de ses rôles les plus marquants. Mankiewicz signe ici un film noir à la croisée de l’espionnage et du drame psychologique.",
+      "link": "https://www.imdb.com/fr/title/tt0044314/?ref_=fn_all_ttl_2"
+    }
   },
   {
     "id": 15,
@@ -217,7 +287,12 @@
     ],
     "answer": "La quête de vérité",
     "era": "classic noir",
-    "image": "/affiches/15_1959-Anatomy-of-a-murder.png"
+    "image": "/affiches/15_1959-Anatomy-of-a-murder.png",
+    "details": {
+      "synopsis": "Un avocat de province défend un homme accusé de meurtre dans une affaire où la frontière entre justice et manipulation devient floue.",
+      "trivia": "Le film fit scandale à sa sortie pour son langage jugé explicite. La musique de Duke Ellington, jazzy et moderne, donna une atmosphère inédite au film judiciaire.",
+      "link": "https://www.imdb.com/title/tt0052561/"
+    }
   },
   {
     "id": 16,
@@ -228,7 +303,12 @@
     "options": ["Sam Spade", "Mike Hammer", "Perry Mason", "Philip Marlowe"],
     "answer": "Philip Marlowe",
     "era": "neo-noir",
-    "image": "/affiches/16_1975-Farewell-my-lovely.png"
+    "image": "/affiches/16_1975-Farewell-my-lovely.png",
+    "details": {
+      "synopsis": "Dans le Los Angeles des années 1940, le détective privé Philip Marlowe enquête sur la disparition d'une ancienne maîtresse d’un ex-bagnard.",
+      "trivia": "Robert Mitchum, alors âgé, apporte une mélancolie nouvelle au personnage de Marlowe. Le film rend hommage visuellement au film noir classique par ses contrastes et ses éclairages expressionnistes.",
+      "link": "https://www.imdb.com/title/tt0072973/"
+    }
   },
   {
     "id": 17,
@@ -239,7 +319,12 @@
     "options": ["Années 1920", "Années 1950", "Années 1970", "Années 1990"],
     "answer": "Années 1950",
     "era": "neo-noir",
-    "image": "/affiches/17_1997-LA-confidential.png"
+    "image": "/affiches/17_1997-LA-confidential.png",
+    "details": {
+      "synopsis": "Trois policiers aux méthodes opposées se retrouvent pris dans un réseau de corruption et de manipulations à Los Angeles.",
+      "trivia": "Adapté du roman de James Ellroy, le film remporta deux Oscars. Sa photographie élégante et sa musique jazz recréent parfaitement le vernis trompeur du Hollywood des années 1950.",
+      "link": "https://www.imdb.com/title/tt0119488/"
+    }
   },
   {
     "id": 18,
@@ -255,7 +340,12 @@
     ],
     "answer": "En analysant ses lettres et codes",
     "era": "neo-noir",
-    "image": "/affiches/18_2007-Zodiac.png"
+    "image": "/affiches/18_2007-Zodiac.png",
+    "details": {
+      "synopsis": "À San Francisco dans les années 1970, un dessinateur de presse s’obsède à identifier le mystérieux tueur du Zodiaque.",
+      "trivia": "Dans ce néo-noir, Fincher a reconstitué avec minutie l’ambiance des années 70, jusqu’à tourner avec des objectifs vintage. Le film est aussi une réflexion sur l’obsession et la vérité insaisissable.",
+      "link": "https://www.imdb.com/title/tt0443706/"
+    }
   },
   {
     "id": 19,
@@ -271,7 +361,12 @@
     ],
     "answer": "La survie d’un personnage solitaire",
     "era": "neo-noir",
-    "image": "/affiches/19_2011-Drive.png"
+    "image": "/affiches/19_2011-Drive.png",
+    "details": {
+      "synopsis": "Un cascadeur taciturne, chauffeur pour des braquages la nuit, voit sa vie basculer après avoir voulu aider sa voisine.",
+      "trivia": "Le style visuel du film, inspiré par les années 1980, mêle violence stylisée et mélancolie. La bande originale est devenue culte, notamment 'Nightcall' de Kavinsky.",
+      "link": "https://www.imdb.com/title/tt0780504/"
+    }
   },
   {
     "id": 20,
@@ -287,6 +382,11 @@
     ],
     "answer": "Le Sphinx (The Riddler)",
     "era": "neo-noir",
-    "image": "/affiches/20_2022-The-Batman.png"
+    "image": "/affiches/20_2022-The-Batman.png",
+    "details": {
+      "synopsis": "Dans une Gotham pluvieuse et corrompue, Batman affronte un tueur énigmatique dont les crimes dévoilent la pourriture du système.",
+      "trivia": "Matt Reeves revendique l’influence du cinéma noir des années 1970 et de 'Zodiac'. Le film explore un Batman détective plus humain et introspectif que ses prédécesseurs.",
+      "link": "https://www.imdb.com/title/tt1877830/"
+    }
   }
 ]

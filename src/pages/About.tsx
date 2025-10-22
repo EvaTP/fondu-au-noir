@@ -114,24 +114,6 @@ const About: React.FC = () => {
           .
         </p>
       </div>
-
-      {/* Dernier paragraphe */}
-      {/* <div className="about-section">
-        <p className="about-paragraph-final">
-          Pour plus d'informations, je vous invite à consulter le projet sur
-          GitHub :{" "}
-          <a
-            href="https://github.com/EvaTP/fondu-au-noir.git"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://github.com/EvaTP/fondu-au-noir.git
-          </a>{" "}
-          <br></br>
-          Les fonctionnalités techniques et la stack sont détaillées dans le
-          fichier README.
-        </p>
-      </div> */}
     </div>
   );
 };

@@ -140,6 +140,26 @@
   line-height: 40px;
 }
 
+/* Bouton "En savoir +" */
+.details-button {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.details-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
 /* BOUTONS */
 /* conteneur des boutons */
 .options {

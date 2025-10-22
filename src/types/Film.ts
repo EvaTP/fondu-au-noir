@@ -8,4 +8,9 @@ export interface Film {
   answer: string;
   era: string;
   image: string; // chemin relatif vers public/affiches/...
+  details?: {
+    synopsis?: string;
+    trivia?: string;
+    link?: string;
+  };
 }

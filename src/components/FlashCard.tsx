@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, easeOut } from "framer-motion";
 import type { Film } from "@/types/Film";
 import "@/styles/FlashCard.css";
+import Modal from "@/components/Modal";
 
 interface FlashCardProps {
   film: Film;
@@ -22,6 +23,8 @@ export default function FlashCard({
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [attempts, setAttempts] = useState(0); // Compteur de tentatives
   const [hasAnsweredCorrectly, setHasAnsweredCorrectly] = useState(false);
+  // Modale (Bonus)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = (option: string) => {
     setSelectedOption(option);
@@ -71,7 +74,7 @@ export default function FlashCard({
       className={`flashcard ${position} ${flipped ? "flipped" : ""}`}
       variants={slideVariants}
       initial="hidden"
-      whileInView="visible" // ✨ Animation au scroll (viewport detection)
+      whileInView="visible" // Animation au scroll (viewport detection)
       viewport={{ once: true, margin: "-100px" }} // once: true = animation une seule fois
     >
       <div className="flashcard-inner">
@@ -122,8 +125,50 @@ export default function FlashCard({
               <strong>La bonne réponse était : {film.answer}</strong>
             </p>
           )}
+
+          {/* Bouton "En savoir +" pour ouvrir la modale */}
+          {(isCorrect || isLastAttemptFailed) && (
+            <button
+              className="details-button"
+              onClick={() => setIsModalOpen(true)}
+            >
+              📖 En savoir +
+            </button>
+          )}
         </div>
       </div>
+
+      {/* MODALE avec détails du film */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={`${film.title} (${film.year})`}
+      >
+        <p>
+          <strong>Réalisateur :</strong> {film.director}
+        </p>
+        {film.details?.synopsis && (
+          <p>
+            <strong>Synopsis :</strong> {film.details.synopsis}
+          </p>
+        )}
+        {film.details?.trivia && (
+          <p>
+            <strong>Le saviez-vous ?</strong> {film.details.trivia}
+          </p>
+        )}
+        {film.details?.link && (
+          <p>
+            <a
+              href={film.details.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🎬 Voir sur IMDb
+            </a>
+          </p>
+        )}
+      </Modal>
     </motion.div>
   );
 }
