@@ -70,6 +70,7 @@ h2 {
   font-family: "Jolly Lodger", system-ui;
   font-size: 4em;
   letter-spacing: 0.1rem;
+  text-align: center;
   color: #fff;
 }
 h3 {
@@ -132,6 +133,93 @@ button:focus-visible {
 
 .footer-links a:hover {
   color: #fff;
+}
+
+/* ************ */
+/*  Page About  */
+/* ************ */
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  /* background: #0d0d0d; */
+  background: #1a1a1a;
+  color: #e5e5e5;
+  font-family: "Playfair Display", serif;
+  line-height: 1.6;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 10px 0;
+  padding: 18px;
+}
+
+.about-section .section-left {
+  flex-direction: row; /* texte à gauche, image à droite */
+}
+
+.about-section .section-right {
+  flex-direction: row-reverse; /* image à gauche, texte à droite */
+}
+
+.about-section .about-paragraph {
+  flex: 1;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 30px;
+}
+
+.about-section .about-paragraph strong {
+  font-size: 2rem;
+}
+
+.about-section .about-image {
+  flex: 1;
+  max-width: 80%;
+  border: 8px inset #f4f1ea;
+  border-radius: 8px;
+}
+
+.about-figure {
+  flex: 1;
+  text-align: center;
+}
+
+.about-caption {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.about-section .about-paragraph-final {
+  font-style: italic;
+  font-size: 1.5rem;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.about-paragraph-final a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* Media query pour petits écrans */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column !important; /* texte et image l’un sous l’autre */
+    text-align: center;
+  }
+
+  .about-image {
+    margin: 0 auto;
+  }
 }
 
 @media (prefers-color-scheme: light) {
