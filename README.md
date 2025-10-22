@@ -20,12 +20,12 @@ Fondu au noir est une application web interactive qui combine une timeline chron
 - Flashcards : chaque carte se retourne pour relèver la réponse après choix de la réponse
 - Animation des flashcards avec Framer Motion
 - Compteur de bonnes réponses en temps réel, calcul du score final
-- Bonus : en cours de réalisation
+- Bonus : modale "📖 En savoir +" sur le film
 - Responsive Design
 
 ## Améliorations prévues
 
-- Ajout de plus de "fun facts" dans la partie ✨ Bonus
+- Ajout d'une page de fin "ScoreBoard" avec nombre de points et commentaires
 
 ### Images & Icônes
 
