@@ -1,7 +1,9 @@
 // src/components/Timeline.tsx
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FlashCard from "@/components/FlashCard";
+import { useScore } from "@/context/ScoreContext";
 import "@/styles/Timeline.css";
 import type { Film } from "@/types/Film";
 
@@ -10,12 +12,13 @@ type TimelineProps = {
 };
 
 const Timeline: React.FC<TimelineProps> = ({ films }) => {
-  const [correctCount, setCorrectCount] = useState(0);
+  const navigate = useNavigate();
+  const { correctCount, incrementScore, resetScore } = useScore(); // ✨ Destructure le context
   const [resetKey, setResetKey] = useState(0); // key pour forcer le re-render
   const [hasStarted, setHasStarted] = useState(false); // vérifie si le quiz a commencé (le bouton "Rejouer" n'apparaît que si le quiz a commencé)
 
   const handleCorrect = () => {
-    setCorrectCount((prev) => prev + 1);
+    incrementScore(); // MODIFIÉ : utilise la fonction du context
   };
 
   // Marque que le quiz a commencé (appelé dès qu'on clique sur une réponse)
@@ -25,10 +28,15 @@ const Timeline: React.FC<TimelineProps> = ({ films }) => {
 
   // Fonction pour tout réinitialiser
   const handleReset = () => {
-    setCorrectCount(0);
+    resetScore(); // utilise la fonction du context
     setResetKey((prev) => prev + 1); // Change la key pour recréer tous les composants
     setHasStarted(false); // Reset l'état hasStarted
     window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll en haut de page
+  };
+
+  // Naviguer vers le Scoreboard
+  const handleFinish = () => {
+    navigate("/scoreboard");
   };
 
   return (
@@ -58,9 +66,13 @@ const Timeline: React.FC<TimelineProps> = ({ films }) => {
         Bonnes réponses : <br /> ✅ {correctCount} / {films.length}
       </div>
 
-      {/* Bouton Reset en bas de page, visible seulement si le quiz a commencé */}
+      {/* MODIFIÉ : Boutons Reset ET Voir résultats, visibles seulement si le quiz a commencé */}
       {hasStarted && (
         <div className="reset-container">
+          <button className="reset-button finish-button" onClick={handleFinish}>
+            🏆 Voir mes résultats
+          </button>
+
           <button className="reset-button" onClick={handleReset}>
             🎬 Rejouer
           </button>

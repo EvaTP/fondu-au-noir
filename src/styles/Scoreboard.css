@@ -1,0 +1,175 @@
+.scoreboard-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 20px;
+}
+
+.scoreboard-card {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border: 3px solid #ffd700;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+  animation: slideIn 0.6s ease;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scoreboard-title {
+  font-family: "Jolly Lodger", cursive;
+  font-size: 4rem;
+  color: #ffd700;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.scoreboard-message {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.scoreboard-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* citations */
+.scoreboard-quote-section {
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #ccc;
+  text-align: center;
+}
+
+.scoreboard-quote {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #ccc;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* historique des scores */
+.scoreboard-history {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.scoreboard-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.scoreboard-history li {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.scoreboard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a1a1a;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+}
+
+.btn-tertiary {
+  background: transparent;
+  border: 2px solid #666;
+  color: #fff;
+}
+
+.btn-tertiary:hover {
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .scoreboard-card {
+    padding: 40px 20px;
+  }
+
+  .scoreboard-title {
+    font-size: 3rem;
+  }
+
+  .scoreboard-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+}

@@ -164,55 +164,27 @@
 /* Bouton REJOUER (reset) */
 /* ********************** */
 
-.reset-container {
+/* .reset-container {
   position: relative;
   display: flex;
   justify-content: center;
   margin: 200px 0 150px 0; /* grande marge en haut pour séparer du dernier item */
+/* padding: 20px; */
+/* z-index: 100;
+} */
+
+/* Ajuste le container pour avoir 2 boutons côte à côte */
+.reset-container {
+  position: relative;
+  display: flex;
+  flex-direction: row; /* ✨ MODIFIÉ : côte à côte au lieu de colonne */
+  justify-content: center;
+  gap: 20px; /* ✨ NOUVEAU : espace entre les boutons */
+  margin: 200px 0 150px 0;
   padding: 20px;
   z-index: 100;
+  flex-wrap: wrap; /* ✨ NOUVEAU : retour à la ligne en mobile */
 }
-
-/* Décoration fin de ligne */
-/* .reset-container::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    #fff 0px,
-    #fff 20px,
-    #000 20px,
-    #000 40px
-  );
-  border: 2px solid #ffd700;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-} */
-
-/* AJOUT : Drapeau à damier sur la ligne d'arrivée */
-/* .reset-container::after {
-  content: "🏁";
-  position: absolute;
-  top: -70px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.5rem;
-  animation: wave 2s ease-in-out infinite;
-} */
-
-/* @keyframes wave {
-  0%,
-  100% {
-    transform: translateX(-50%) rotate(-5deg);
-  }
-  50% {
-    transform: translateX(-50%) rotate(5deg);
-  }
-} */
 
 .reset-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -242,9 +214,20 @@
   transform: translateY(-1px) scale(1.02);
 }
 
-/* ***************** */
-/* RESPONSIVE DESIGN */
-/* ***************** */
+/* Style spécifique pour le bouton "Voir résultats" */
+.finish-button {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a1a1a;
+}
+
+.finish-button:hover {
+  background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+}
+
+/* ****************** */
+/*  RESPONSIVE DESIGN */
+/* ****************** */
 
 /* Breakpoint pour tel mobiles */
 @media (max-width: 768px) {
@@ -295,9 +278,12 @@
     min-width: auto;
   }
   .reset-container {
-    margin: 40px 0 60px 0;
+    flex-direction: column;
+    gap: 15px;
   }
   .reset-button {
+    width: 100%;
+    max-width: 350px;
     font-size: 1.2rem;
     padding: 15px 30px;
   }
