@@ -90,7 +90,7 @@ const About: React.FC = () => {
             </li>
           </ul>
           Ces sources offrent des perspectives historiques, analytiques et des
-          suggestions de visionnage si tu souhaites approfondir le thème.
+          suggestions de visionnage si tu souhaites approfondir le sujet.
         </p>
       </div>
 

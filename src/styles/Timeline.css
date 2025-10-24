@@ -136,7 +136,7 @@
 /* ****** */
 .score {
   position: fixed;
-  top: 200px;
+  top: 700px;
   right: 40px;
   text-align: left;
   font-size: 2rem;
@@ -270,7 +270,7 @@
     max-width: 400px;
   }
   .score {
-    top: 15px;
+    top: 10px;
     right: 10px;
     left: 10px;
     font-size: 1.5rem;

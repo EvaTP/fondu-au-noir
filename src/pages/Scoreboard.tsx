@@ -9,9 +9,11 @@ import "@/styles/Scoreboard.css";
 export default function Scoreboard() {
   const { correctCount, totalQuestions, resetScore } = useScore();
   const navigate = useNavigate();
-  const scoreHistory = JSON.parse(
-    localStorage.getItem("scoreHistory") || "[]"
-  ).reverse();
+  const [scoreHistory, setScoreHistory] = useState<any[]>([]);
+  const [showQuote, setShowQuote] = useState(false);
+  // const scoreHistory = JSON.parse(
+  //   localStorage.getItem("scoreHistory") || "[]"
+  // ).reverse();
 
   // ✨ Trigger les confettis dès l'arrivée sur la page
   useConfetti(true);
@@ -19,7 +21,7 @@ export default function Scoreboard() {
   // ✨ useMemo :
   // 1) Calcule le pourcentage de bonnes réponses
   // 2) Affiche un message personnalisé selon le score (ne recalcule que si le score change)
-  // 2) Affiche un quote selon le score obtenu (avec le bouton voir citation)
+  // 2) Affiche une recommandation selon le score obtenu (avec le bouton "Notre recommandation pour toi")
 
   const scoreMessage = useMemo(() => {
     const percentage = (correctCount / totalQuestions) * 100;
@@ -29,13 +31,14 @@ export default function Scoreboard() {
         title: "🏆 Parfait !",
         message: "Tu es un véritable expert du film noir !",
         quote:
-          "« The stuff that dreams are made of. » — *Le Faucon maltais* (1941)",
+          "🏆 Score 100% : “Inspecteur légendaire”\n\nChapeau bas. Tu es entré dans la légende des limiers du septième art. Tes connaissances frôlent la perfection. Tu peux désormais t’attaquer aux frontières du genre : Mulholland Drive, Nightcrawler, ou The Batman.\n\n🎬 “Quand tout devient clair, le projecteur s’éteint.”",
       };
     } else if (percentage >= 80) {
       return {
         title: "🌟 Excellent !",
         message: "Tu connais très bien le cinéma noir.",
-        quote: "« Forget it, Jake. It’s Chinatown. » — *Chinatown* (1974)",
+        quote:
+          "🌟 Score 80-99% : “Détective chevronné”\n\nTu pourrais presque donner des cours à Sam Spade. Tu saisis la complexité morale, la tension et les faux-semblants. Revisite Sunset Boulevard pour son cynisme hollywoodien\n\n🎬 “Ce n’est pas la vérité qu’on cherche, c’est la façon dont elle s’éclaire.”",
       };
     } else if (percentage >= 60) {
       return {
@@ -43,26 +46,24 @@ export default function Scoreboard() {
         message:
           "Bonne culture cinéma ! Quelques révisions et ce sera parfait.",
         quote:
-          "« I was born when she kissed me... » — *In a Lonely Place* (1950)",
+          "👍 Score 60-79% : “Agent prometteur”\n\nPas mal, détective. Tu connais les visages, les codes et les pièges du genre. Pour aller plus loin, explore le néo-noir : Chinatown, L.A. Confidential, Zodiac.\n\n🎬 “Les temps changent, mais les ombres restent.”",
       };
     } else if (percentage >= 40) {
       return {
-        title: "🎯 Pas mal !",
+        title: "🔎 Pas mal !",
         message: "Tu as des bonnes bases, continue à découvrir ces films !",
         quote:
-          "« You know how to whistle, don’t you? » — *Le Port de l’angoisse* (1944)",
+          "🔎 Score 40-59% : “Apprenti enquêteur”\n\nTu as flairé quelques indices, mais l’affaire reste trouble. Approfondis ton enquête avec Le Grand Sommeil et Le Troisième Homme. Observe comment la narration et la lumière racontent autant que les dialogues.\n\n🎬 “Chaque enquête commence par un détail… et finit par un miroir brisé.”",
       };
     } else {
       return {
-        title: "🎬 À découvrir !",
+        title: "🔦 À découvrir !",
         message: "Peut-etre préfères-tu les comédies romantiques...",
         quote:
-          "« All right, Mr. DeMille, I’m ready for my close-up. » — *Sunset Boulevard* (1950)",
+          "🔦 Score <40% : “Touriste dans les ténèbres”\n\nTu sembles encore marcher dans la brume des ruelles de L.A. Commence par les classiques : Le Faucon maltais, Assurance sur la mort... Ils poseront les bases du film noir et ses archétypes.\n\n🎬 “La vérité est une ombre, et toi tu n’as qu’une lampe de poche.”",
       };
     }
   }, [correctCount, totalQuestions]);
-
-  const [showQuote, setShowQuote] = useState(false);
 
   const handleRestart = () => {
     resetScore();
@@ -78,9 +79,11 @@ export default function Scoreboard() {
       date: new Date().toISOString(),
     };
     history.push(newScore);
+
     // Garde seulement les 5 derniers scores
-    if (history.length > 5) history.shift();
-    localStorage.setItem("scoreHistory", JSON.stringify(history));
+    const last5 = history.slice(-5); // tronque le tableau pour afficher uniquement les 5 derniers
+    localStorage.setItem("scoreHistory", JSON.stringify(last5));
+    setScoreHistory([...last5].reverse()); // pour afficher du plus récent au plus ancien
   }, [correctCount, totalQuestions]);
 
   return (
@@ -105,14 +108,14 @@ export default function Scoreboard() {
           </div>
         </div>
 
-        {/* citation */}
+        {/* Recommandation ("quote") */}
         <div className="scoreboard-quote-section">
           {!showQuote ? (
             <button
               className="btn-secondary"
               onClick={() => setShowQuote(true)}
             >
-              🎬 Ma citation
+              🎬 Notre recommandation pour toi
             </button>
           ) : (
             <blockquote className="scoreboard-quote">
@@ -124,7 +127,7 @@ export default function Scoreboard() {
         <div className="scoreboard-history">
           <h4>Historique de tes derniers scores</h4>
           <ul>
-            {scoreHistory.map((entry: any, index: number) => (
+            {scoreHistory.map((entry, index) => (
               <li key={index}>
                 {new Date(entry.date).toLocaleDateString("fr-FR")} —{" "}
                 {entry.score}/{entry.total} (

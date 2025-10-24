@@ -82,8 +82,9 @@
   margin-top: 1rem;
   font-style: italic;
   color: #ccc;
-  text-align: center;
+  text-align: left;
   line-height: 1.6;
+  white-space: pre-line; /* respecte les sauts de ligne \n */
 }
 
 /* historique des scores */
