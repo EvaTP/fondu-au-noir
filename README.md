@@ -1,10 +1,10 @@
 # 🎥 Fondu au noir
 
-Fondu au noir est une application web interactive qui combine une timeline chronologique et un quiz à cartes (flashcards) pour explorer l'histoire du cinéma noir de manière ludique.
-
 <p align="center">
 <img src="public/screenshots/screenshot-wide.png" alt="visuel du site" width="400" height="400">
 </p>
+
+Fondu au noir est une application web interactive qui combine une timeline chronologique et un quiz à cartes (flashcards) pour explorer l'histoire du cinéma noir de manière ludique.
 
 ## Stack
 
@@ -19,6 +19,8 @@ Fondu au noir est une application web interactive qui combine une timeline chron
 - `useState` : gestion de l'état des flashcards, du score, et de l'affichage des recommandations.
 - `useEffect` : sauvegarde de l'historique des scores dans `localStorage` et déclenchement des confettis à l'arrivée sur la page Scoreboard.
 - `useMemo` : calcul du message et de la recommandation selon le score pour éviter des recalculs inutiles.
+- `useRef` : gestion de la référence de la modale pour le focus et l'accessibilité, ainsi que pour contrôler les interactions clavier.
+- `useNavigate` : gestion de la navigation entre les pages (ex. retour au quiz depuis la page Scoreboard).
 - Hooks personnalisés :
   - `useConfetti` : déclenchement des confettis à l'arrivée sur la page Scoreboard.
   - `useScore` (contexte) : partage et gestion globale du score et des réponses correctes entre les composants.
