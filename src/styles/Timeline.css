@@ -164,32 +164,22 @@
 /* Bouton REJOUER (reset) */
 /* ********************** */
 
-/* .reset-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 200px 0 150px 0; /* grande marge en haut pour séparer du dernier item */
-/* padding: 20px; */
-/* z-index: 100;
-} */
-
 /* Ajuste le container pour avoir 2 boutons côte à côte */
 .reset-container {
   position: relative;
   display: flex;
-  flex-direction: row; /* ✨ MODIFIÉ : côte à côte au lieu de colonne */
-  justify-content: center;
-  gap: 20px; /* ✨ NOUVEAU : espace entre les boutons */
+  flex-direction: row;
+  gap: 40px;
   margin: 200px 0 150px 0;
-  padding: 20px;
+  padding: 40px;
   z-index: 100;
-  flex-wrap: wrap; /* ✨ NOUVEAU : retour à la ligne en mobile */
+  flex-wrap: wrap; /* retour à la ligne en mobile */
 }
 
 .reset-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   border: none;
   padding: 30px 40px;

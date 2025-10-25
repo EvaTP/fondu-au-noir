@@ -6,7 +6,7 @@
   text-align: center;
 } */
 
-/* ✨ NOUVEAU : #root prend toute la hauteur minimum */
+/* #root prend toute la hauteur minimum */
 #root {
   min-height: 100vh;
   display: flex;

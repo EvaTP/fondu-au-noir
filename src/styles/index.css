@@ -45,10 +45,17 @@ body {
   background-color: #1a1a1a;
 }
 
-/* ✨ MODIFIÉ : app-container pousse le footer en bas */
+/* app-container pousse le footer en bas */
 .app-container {
-  flex: 1; /* Prend tout l'espace disponible */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* flex: 1;  Prend tout l'espace disponible */
   width: 100%;
+}
+
+.main-content {
+  flex: 1; /* Prend tout l'espace disponible */
 }
 
 h1 {
@@ -104,7 +111,7 @@ button:focus-visible {
   padding: 15px 10px;
   text-align: center;
   width: 100%;
-  margin-top: 220px;
+  margin-top: auto; /* pousse le footer en bas */
 }
 
 .footer-content {
@@ -133,6 +140,75 @@ button:focus-visible {
 
 .footer-links a:hover {
   color: #fff;
+}
+
+/* **************************** */
+/*  Page IntroScreen (Accueil)  */
+/* **************************** */
+
+.intro-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.intro-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/intro-screen.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) brightness(40%); /* uniquement sur le fond */
+  z-index: 0;
+}
+
+.intro-overlay {
+  position: relative; /* au-dessus du fond */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; /* ton texte reste blanc */
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.intro-container p {
+  font-size: 2rem;
+  line-height: 2;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.intro-button {
+  background-color: #b8860b;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 1.5rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  margin-top: 2rem;
+}
+
+.intro-button:hover {
+  background-color: #daa520;
+  transform: scale(1.05);
 }
 
 /* ************ */

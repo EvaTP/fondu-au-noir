@@ -7,7 +7,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-links">
-          <Link to="/about">À propos</Link> | <Link to="/">Retour au quiz</Link>
+          <Link to="/">Accueil</Link> | <Link to="/about">À propos</Link> |{" "}
+          <Link to="/quiz">Retour au quiz</Link>
           {/* <a href="#about">À propos</a> */}
         </div>
         <p>

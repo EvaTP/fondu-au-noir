@@ -27,9 +27,9 @@ Fondu au noir est une application web interactive qui combine une timeline chron
 
 ## Fonctionnalités
 
-- Timeline chronologique
+- Page d'accueil
+- Page de quiz avec une Timeline chronologique et des flashcards
 - Flashcards :
-
 <p align="center">
   <img src="public/screenshots/flashcard.gif" alt="Animation de la flashcard" width="300">
 </p>
