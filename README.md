@@ -25,24 +25,23 @@ Ce projet utilise plusieurs hooks React pour gérer l’état global, les effets
 - `useNavigate` : gestion de la navigation entre les pages (ex. retour au quiz depuis la page Scoreboard).
 - `useCallback` : mémorisation de la fonction de lancement des confettis pour éviter qu’elle ne soit recréée à chaque rendu (optimisation des performances).
 - Hooks personnalisés :
-  - `useConfetti` : déclenchement des confettis à l'arrivée sur la page Scoreboard.
-  - `useScore` (contexte) : partage et gestion globale du score et des réponses correctes entre les composants.
+  - `useConfetti` : déclenchement des confettis à l'arrivée sur la page Scoreboard. 🎉
+  - `useScore` (contexte) : partage et gestion globale du score et des réponses correctes entre les composants.✅
 
 ## Fonctionnalités
 
-- Page d'accueil
-- Page de quiz avec une Timeline chronologique et des flashcards
-- Flashcards :
-<p align="center">
-  <img src="public/screenshots/flashcard.gif" alt="Animation de la flashcard" width="300">
-</p>
-
-- chaque carte contient un film et une question avec 4 choix de réponse, et se retourne pour révéler la bonne réponse après avoir validé un choix
-- modale "📖 En savoir +" sur le film
-- animation des flashcards avec Framer Motion
-- Compteur de bonnes réponses en temps réel, calcul du score final
-- Page de fin "ScoreBoard" avec rappel du score final, pourcentage de réussite, historique des derniers scores et une recommandation personnalisée au jouer selon son pourcentage de réussite.
-- Page "Á propos"
+- **Page d'accueil**
+- **Page de quiz** avec une Timeline chronologique et des flashcards
+  - Flashcards :
+  <p align="center">
+    <img src="public/screenshots/flashcard.gif" alt="Animation de la flashcard" width="300">
+  </p>
+  - chaque carte contient un film et une question avec 4 choix de réponse, et se retourne pour révéler la bonne réponse après avoir validé un choix
+  - modale "📖 En savoir +" sur le film
+  - animation des flashcards avec Framer Motion
+  - Compteur de bonnes réponses en temps réel, calcul du score final
+- **Page de fin "ScoreBoard"** avec rappel du score final, pourcentage de réussite, historique des derniers scores et une recommandation personnalisée au jouer selon son pourcentage de réussite.
+- **Page "Á propos"**
 - Responsive Design
 
 ### Images & Icônes
