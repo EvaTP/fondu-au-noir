@@ -9,7 +9,6 @@ export default function Footer() {
         <div className="footer-links">
           <Link to="/">Accueil</Link> | <Link to="/about">À propos</Link> |{" "}
           <Link to="/quiz">Retour au quiz</Link>
-          {/* <a href="#about">À propos</a> */}
         </div>
         <p>
           © {currentYear} Fondu au noir | Eva Tharrats - Tous droits réservés.

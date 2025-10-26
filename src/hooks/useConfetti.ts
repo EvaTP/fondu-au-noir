@@ -4,9 +4,9 @@ import { useEffect, useCallback } from "react";
 import confetti from "canvas-confetti";
 
 export function useConfetti(trigger: boolean) {
-  // ✨ useCallback : Mémorise la fonction pour éviter les re-créations
+  // useCallback : mémorise la fonction pour éviter les re-créations
   const fireConfetti = useCallback(() => {
-    const duration = 3000;
+    const duration = 4000;
     const end = Date.now() + duration;
 
     const colors = ["#ffd700", "#646cff", "#ffffff"];

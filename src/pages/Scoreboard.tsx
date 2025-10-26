@@ -11,14 +11,11 @@ export default function Scoreboard() {
   const navigate = useNavigate();
   const [scoreHistory, setScoreHistory] = useState<any[]>([]);
   const [showQuote, setShowQuote] = useState(false);
-  // const scoreHistory = JSON.parse(
-  //   localStorage.getItem("scoreHistory") || "[]"
-  // ).reverse();
 
-  // ✨ Trigger les confettis dès l'arrivée sur la page
+  // déclencher les confettis dès l'arrivée sur la page
   useConfetti(true);
 
-  // ✨ useMemo :
+  // useMemo :
   // 1) Calcule le pourcentage de bonnes réponses
   // 2) Affiche un message personnalisé selon le score (ne recalcule que si le score change)
   // 2) Affiche une recommandation selon le score obtenu (avec le bouton "Notre recommandation pour toi")
@@ -142,10 +139,6 @@ export default function Scoreboard() {
           <button className="btn-primary" onClick={handleRestart}>
             Retour au quiz
           </button>
-
-          {/* <button className="btn-tertiary" onClick={() => navigate("/")}>
-            Retour au quiz
-          </button> */}
         </div>
       </div>
     </div>

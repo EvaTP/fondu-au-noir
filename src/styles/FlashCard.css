@@ -45,9 +45,6 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  /* transition: transform 0.6s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
-  /* box-sizing: border-box; */
 }
 
 /* FRONT */
@@ -81,11 +78,11 @@
 }
 
 .flashcard-front img {
-  display: block; /* ✨ Enlève l'espace en bas de l'image */
-  width: auto; /* ✨ Largeur automatique selon ratio */
-  max-width: 280px; /* ✨ Largeur max pour contrôler la taille */
-  height: 320px; /* ✨ Hauteur fixe */
-  object-fit: contain; /* ✨ Garde l'image entière */
+  display: block;
+  width: auto; /* largeur automatique selon ratio */
+  max-width: 280px; /* largeur max pour contrôler la taille */
+  height: 320px;
+  object-fit: contain; /* garde l'image entière */
   /* effet photo vieillie */
   filter: sepia(0.15) contrast(1.1);
 }
@@ -165,8 +162,7 @@
 .options {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* espace entre les boutons */
-  /* margin-top: auto; */
+  gap: 10px;
   justify-content: center; /* centrage horizontal */
   padding: 0 10px 10px 10px;
   width: 100%;
@@ -184,8 +180,8 @@
   transition: all 0.3s;
   width: 100%; /* tous les boutons même largeur */
   text-align: center;
-  line-height: 1.3; /* Meilleure gestion du texte multiligne */
-  min-height: 48px; /* Hauteur minimale pour cohérence */
+  line-height: 1.3; /* meilleure gestion du texte multiligne */
+  min-height: 48px; /* hauteur minimale pour cohérence */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,8 +189,7 @@
 
 .flashcard-front button:hover {
   background-color: #535bf2;
-  /* transform: scale(1.05); */
-  transform: translateY(-3px); /* Effet de levée au hover */
+  transform: translateY(-3px); /* effet de levée au hover */
   box-shadow: 0 4px 8px rgba(100, 108, 255, 0.3);
 }
 

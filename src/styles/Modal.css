@@ -76,13 +76,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  /* transition: all 0.3s ease; */
 }
 
 .modal-close:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #ffd700;
-  /* transform: rotate(90deg); */
 }
 
 /* Body du modal */

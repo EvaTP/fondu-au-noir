@@ -23,7 +23,7 @@ export default function FlashCard({
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [attempts, setAttempts] = useState(0); // Compteur de tentatives
   const [hasAnsweredCorrectly, setHasAnsweredCorrectly] = useState(false);
-  // Modale (Bonus)
+  // Modale
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = (option: string) => {
@@ -54,7 +54,7 @@ export default function FlashCard({
   const slideVariants = {
     hidden: {
       opacity: 0,
-      x: position === "left" ? -100 : 100, // Vient de gauche ou droite selon position
+      x: position === "left" ? -100 : 100, // vient de gauche ou droite selon position
       scale: 0.8,
     },
     visible: {
@@ -63,7 +63,7 @@ export default function FlashCard({
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: easeOut, // Easing doux
+        ease: easeOut,
         delay: index === 0 ? 1.5 : 0, // la première card attend 1.5s
       },
     },
@@ -74,7 +74,7 @@ export default function FlashCard({
       className={`flashcard ${position} ${flipped ? "flipped" : ""}`}
       variants={slideVariants}
       initial="hidden"
-      whileInView="visible" // Animation au scroll (viewport detection)
+      whileInView="visible" // animation au scroll (viewport detection)
       viewport={{ once: true, margin: "-100px" }} // once: true = animation une seule fois
     >
       <div className="flashcard-inner">

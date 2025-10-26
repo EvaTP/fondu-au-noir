@@ -1,12 +1,14 @@
 /* ************************** */
-/* Timeline container global */
+/*  Timeline container global */
 /* ************************** */
 .timeline-container {
   position: relative;
-  max-width: 1400px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding-top: 100px; /* espace pour le score fixe en haut */
-  padding-bottom: 50px;
+  padding-bottom: 400px;
+  background: #1a1a1a;
 }
 
 /* ************************ */
@@ -16,11 +18,10 @@
   position: absolute;
   left: 50%;
   top: 60px;
-  /* bottom: 200px; */
-  height: calc(100% + 40px); /* timeline plus longue */
+  /* height: calc(100% + 80px); */
+  height: calc(100% - 550px);
   width: 3px;
   background-color: #fff;
-  /* background: linear-gradient(to bottom, #333, #666); */
   transform: translateX(-50%);
 }
 
@@ -39,10 +40,11 @@
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
+/* Décoration fin de ligne */
 .timeline-line::after {
   content: "🏁";
   position: absolute;
-  bottom: -80px; /* espace  entre le drapeau et la dernière flashcard */
+  bottom: -120px; /* espace  entre le drapeau et la dernière flashcard */
   left: 50%;
   transform: translateX(-50%);
   font-size: 4rem;
@@ -61,15 +63,15 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* margin: 800px 0; */
   margin-bottom: 200px;
   margin-top: 190px;
   min-height: 750px;
   z-index: 1;
 }
 
+/* dernière flashcard */
 .timeline-item:last-child {
-  margin-bottom: 500px; /* augmente l’espace sous la dernière flashcard */
+  margin-bottom: 180px; /* augmente l’espace sous la dernière flashcard */
 }
 
 .timeline-year {
@@ -93,9 +95,8 @@
   background: white;
   left: 50%; /* centre horizontalement sur la timeline */
   top: 0;
-  /* transform: translateX(-50%); */
   border: 4px solid #ffd700;
-  /* transform: translate(-50%, -50%); centrage parfait */
+  /* transform: translate(-50%, -50%); centrage parfait horizontal et vertical */
   transform: translateX(-50%); /* seulement centrage horizontal */
   z-index: 5;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
@@ -114,7 +115,7 @@
 }
 
 /* ****************************** */
-/* Positionnement des FlashCards */
+/* Positionnement des FlashCards  */
 /* ****************************** */
 /* à gauche : items impairs */
 .timeline-item .flashcard.left {
@@ -152,30 +153,27 @@
   z-index: 1000;
 }
 
-/* ✨ NOUVEAU : Conteneur du bouton reset en bas de page */
-.reset-container {
-  display: flex;
-  justify-content: center;
-  margin: 60px 0 80px 0;
-  padding: 20px;
-}
+/* ********** */
+/*  Boutons   */
+/* ********** */
 
-/* ********************** */
-/* Bouton REJOUER (reset) */
-/* ********************** */
-
-/* Ajuste le container pour avoir 2 boutons côte à côte */
+/* Conteneur du bouton "Voir mes résultats" et "Rejouer" en bas de page */
 .reset-container {
   position: relative;
   display: flex;
   flex-direction: row;
   gap: 40px;
-  margin: 200px 0 150px 0;
+  justify-content: center;
+  /* margin: 200px 0 150px 0; */
+  margin: 100px 0 200px 0;
   padding: 40px;
-  z-index: 100;
+  min-height: 150px;
+  /* z-index: 100; */
   flex-wrap: wrap; /* retour à la ligne en mobile */
 }
 
+/* Bouton REJOUER (reset) */
+/* ********************** */
 .reset-button {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -193,26 +191,27 @@
   z-index: 100;
   position: relative;
 }
-
 .reset-button:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
   background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
-
 .reset-button:active {
   transform: translateY(-1px) scale(1.02);
 }
 
-/* Style spécifique pour le bouton "Voir résultats" */
+/* Bouton VOIR RESULTATS (finish) */
+/* ****************************** */
 .finish-button {
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
   color: #1a1a1a;
 }
-
 .finish-button:hover {
   background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
   box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+}
+.finish-button:active {
+  transform: translateY(-1px) scale(1.02);
 }
 
 /* ****************** */

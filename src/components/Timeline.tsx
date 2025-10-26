@@ -66,18 +66,23 @@ const Timeline: React.FC<TimelineProps> = ({ films }) => {
         Bonnes réponses : <br /> ✅ {correctCount} / {films.length}
       </div>
 
-      {/* MODIFIÉ : Boutons Reset ET Voir résultats, visibles seulement si le quiz a commencé */}
-      {hasStarted && (
-        <div className="reset-container">
-          <button className="reset-button finish-button" onClick={handleFinish}>
-            🏆 Voir mes résultats
-          </button>
+      {/* MODIFIÉ : Boutons Reset ET Voir résultats, reset-container toujours visible et boutons visibles seulement si le quiz a commencé */}
+      <div className="reset-container">
+        {hasStarted && (
+          <>
+            <button
+              className="reset-button finish-button"
+              onClick={handleFinish}
+            >
+              🏆 Voir mes résultats
+            </button>
 
-          <button className="reset-button" onClick={handleReset}>
-            🎬 Rejouer
-          </button>
-        </div>
-      )}
+            <button className="reset-button" onClick={handleReset}>
+              🎬 Rejouer
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 };
