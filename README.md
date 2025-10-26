@@ -18,16 +18,19 @@ Fondu au noir est une application web interactive qui combine une timeline chron
 
 - **Page d'accueil**
 - **Page de quiz** avec une Timeline chronologique et des flashcards
-- **Page de quiz** avec une Timeline chronologique et des flashcards
-- Flashcards :
 
-  ![Animation de la flashcard](public/screenshots/flashcard.gif)
+  - Flashcards :
+    <p align="center">
+      ![Animation de la flashcard](public/screenshots/flashcard.gif)
+    </p>
+  - Chaque carte contient un film et une question avec 4 choix de réponse, et se retourne pour révéler la bonne réponse après avoir validé un choix.
+  - Modale "📖 En savoir +" sur le film.
+  - Animation des flashcards avec Framer Motion.
+  - Compteur de bonnes réponses en temps réel et calcul du score final.
 
-- chaque carte contient un film et une question avec 4 choix de réponse, et se retourne pour révéler la bonne réponse après avoir validé un choix
-- modale "📖 En savoir +" sur le film
-- animation des flashcards avec Framer Motion
-- Compteur de bonnes réponses en temps réel, calcul du score final
 - **Page de fin "ScoreBoard"** avec rappel du score final, pourcentage de réussite, historique des derniers scores et une recommandation personnalisée au joueur selon son pourcentage de réussite.
+- **Page "Á propos"**
+- Responsive Design
   <!-- - Flashcards :
   <p align="center">
     <img src="public/screenshots/flashcard.gif" alt="Animation de la flashcard" width="300">
@@ -37,9 +40,6 @@ Fondu au noir est une application web interactive qui combine une timeline chron
   - modale "📖 En savoir +" sur le film.
   - animation des flashcards avec Framer Motion.
   - Compteur de bonnes réponses en temps réel, calcul du score final. -->
-- **Page de fin "ScoreBoard"** avec rappel du score final, pourcentage de réussite, historique des derniers scores et une recommandation personnalisée au joueur selon son pourcentage de réussite.
-- **Page "Á propos"**
-- Responsive Design
 
 ### Hooks React utilisés
 
