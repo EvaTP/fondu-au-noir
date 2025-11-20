@@ -112,7 +112,8 @@ export default function FlashCard({
           {canRetry && (
             <>
               <p className="retry-info">
-                Il te reste <strong>1 tentative</strong>
+                Il te reste <br />
+                <strong>1 tentative</strong>
               </p>
               <button className="retry-button" onClick={handleRetry}>
                 Rejouer
