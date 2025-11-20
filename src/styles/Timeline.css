@@ -221,60 +221,117 @@
 /* Breakpoint pour tel mobiles */
 @media (max-width: 768px) {
   .timeline-container {
-    padding-top: 140px;
+    /* padding-top: 140px; */
+    padding-top: 80px;
+    padding-left: 0;
+    padding-right: 0;
   }
+  /* Ligne à gauche */
   .timeline-line {
+    left: 40px; /* Position fixe à gauche */
+    top: 100px;
+    transform: none; /* Enlève le translateX */
+  }
+  /* .timeline-line {
     left: 30px;
     top: 140px;
+  } */
+
+  /* Décorations ligne */
+  .timeline-line::before {
+    font-size: 2rem;
+    padding: 10px 15px;
+    top: -20px;
+    left: 0;
+    transform: translateX(-50%);
   }
+
+  .timeline-line::after {
+    font-size: 2rem;
+    padding: 10px 15px;
+    bottom: -80px;
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  /* Container de chaque item */
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 80px;
-    margin-bottom: 90px; /* moins d'espace en mobile */
-    min-height: auto; /* hauteur flexible */
-  }
-  .timeline-year {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    transform: none;
-    text-align: left;
-    margin-bottom: 15px;
-    font-size: 2rem;
-  }
-  .timeline-dot {
-    left: 30px;
-    top: 30px;
+    margin-left: 0; /* Enlève la marge gauche */
+    margin-bottom: 120px;
+    margin-top: 60px;
+    min-height: auto;
+    padding-left: 90px; /* Espace pour la timeline à gauche */
+    padding-right: 15px;
   }
 
-  /* FlashCards empilées verticalement en mobile */
+  .timeline-item:last-child {
+    margin-bottom: 100px;
+  }
+
+  /* Années à gauche de la timeline */
+  /* Année */
+  .timeline-year {
+    position: absolute;
+    left: 50px; /* Juste à droite du dot */
+    top: -5px;
+    right: auto;
+    transform: none;
+    text-align: left;
+    font-size: 2.5rem;
+    white-space: nowrap;
+  }
+
+  /* Forcer même position pour impairs et pairs */
+  .timeline-item:nth-child(odd) .timeline-year,
+  .timeline-item:nth-child(even) .timeline-year {
+    left: 50px;
+    right: auto;
+    text-align: left;
+  }
+
+  /* Dot sur la ligne */
+  .timeline-dot {
+    position: absolute;
+    left: 40px; /* Aligné avec la ligne */
+    top: 0;
+    transform: translateX(-50%); /* Centre sur la ligne */
+    width: 20px;
+    height: 20px;
+  }
+
+  /* FlashCards toutes à droite de la timeline */
   .timeline-item .flashcard.left,
   .timeline-item .flashcard.right {
-    position: static;
+    position: relative; /* Important : relative pas static */
+    left: 0;
+    right: 0;
     transform: none;
-    margin: 20px 0 0 0;
+    margin: 50px 0 0 0; /* Espace au-dessus */
     width: 100%;
-    max-width: 400px;
+    max-width: 100%; /* Prend toute la largeur disponible */
   }
+
+  /* Score disparait en mobile */
   .score {
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    font-size: 1.5rem;
-    padding: 10px 15px;
-    min-width: auto;
+    display: none;
   }
+
+  /* Boutons en bas */
   .reset-container {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 80px 0 150px 0;
   }
+
   .reset-button {
-    width: 100%;
+    width: 90%;
     max-width: 350px;
-    font-size: 1.2rem;
-    padding: 15px 30px;
+    font-size: 1.5rem;
+    padding: 20px 30px;
   }
 }
 

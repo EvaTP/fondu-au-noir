@@ -156,18 +156,49 @@
   color: #ffd700;
 }
 
+/* ****************** */
+/*  RESPONSIVE DESIGN */
+/* ****************** */
+
 @media (max-width: 768px) {
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scoreboard-container {
+    min-height: auto; /* plus de 100vh */
+    height: auto;
+    align-items: flex-start; /* place en haut */
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 40px; /* espace pour scroll */
+  }
+
   .scoreboard-card {
-    padding: 40px 20px;
+    padding: 30px 20px;
+    margin-top: 20px;
   }
 
   .scoreboard-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
+  .scoreboard-message {
+    font-size: 1.7rem;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.3;
+  }
   .scoreboard-stats {
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
   }
 
   .stat-value {

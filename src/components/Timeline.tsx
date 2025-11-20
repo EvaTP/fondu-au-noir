@@ -13,12 +13,12 @@ type TimelineProps = {
 
 const Timeline: React.FC<TimelineProps> = ({ films }) => {
   const navigate = useNavigate();
-  const { correctCount, incrementScore, resetScore } = useScore(); // ✨ Destructure le context
+  const { correctCount, incrementScore, resetScore } = useScore(); // destructure le context
   const [resetKey, setResetKey] = useState(0); // key pour forcer le re-render
   const [hasStarted, setHasStarted] = useState(false); // vérifie si le quiz a commencé (le bouton "Rejouer" n'apparaît que si le quiz a commencé)
 
   const handleCorrect = () => {
-    incrementScore(); // MODIFIÉ : utilise la fonction du context
+    incrementScore(); // utilise la fonction du context
   };
 
   // Marque que le quiz a commencé (appelé dès qu'on clique sur une réponse)
@@ -29,9 +29,9 @@ const Timeline: React.FC<TimelineProps> = ({ films }) => {
   // Fonction pour tout réinitialiser
   const handleReset = () => {
     resetScore(); // utilise la fonction du context
-    setResetKey((prev) => prev + 1); // Change la key pour recréer tous les composants
-    setHasStarted(false); // Reset l'état hasStarted
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll en haut de page
+    setResetKey((prev) => prev + 1); // change la key pour recréer tous les composants
+    setHasStarted(false); // reset l'état hasStarted
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll en haut de page
   };
 
   // Naviguer vers le Scoreboard
@@ -66,7 +66,7 @@ const Timeline: React.FC<TimelineProps> = ({ films }) => {
         Bonnes réponses : <br /> ✅ {correctCount} / {films.length}
       </div>
 
-      {/* MODIFIÉ : Boutons Reset ET Voir résultats, reset-container toujours visible et boutons visibles seulement si le quiz a commencé */}
+      {/* Boutons Reset ET Voir résultats, reset-container toujours visible et boutons visibles seulement si le quiz a commencé */}
       <div className="reset-container">
         {hasStarted && (
           <>

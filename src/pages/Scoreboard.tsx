@@ -67,6 +67,11 @@ export default function Scoreboard() {
     navigate("/");
   };
 
+  // useEffect : Scroll en haut de page au chargement
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // useEffect : Sauvegarde l'historique des scores
   useEffect(() => {
     const history = JSON.parse(localStorage.getItem("scoreHistory") || "[]");
@@ -77,10 +82,10 @@ export default function Scoreboard() {
     };
     history.push(newScore);
 
-    // Garde seulement les 5 derniers scores
-    const last5 = history.slice(-5); // tronque le tableau pour afficher uniquement les 5 derniers
-    localStorage.setItem("scoreHistory", JSON.stringify(last5));
-    setScoreHistory([...last5].reverse()); // pour afficher du plus récent au plus ancien
+    // Garde seulement les 4 derniers scores
+    const last4 = history.slice(-4); // tronque le tableau pour afficher uniquement les 4 derniers
+    localStorage.setItem("scoreHistory", JSON.stringify(last4));
+    setScoreHistory([...last4].reverse()); // pour afficher du plus récent au plus ancien
   }, [correctCount, totalQuestions]);
 
   return (

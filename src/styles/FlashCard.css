@@ -225,16 +225,111 @@
   transform: scale(1.05);
 }
 
-/* RESPONSIVE DESIGN */
+/* ****************** */
+/*  RESPONSIVE DESIGN */
+/* ****************** */
+
 @media (max-width: 768px) {
   .flashcard {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: auto !important;
+    min-height: 850px;
+  }
+
+  .flashcard-inner {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* .flashcard {
     width: 90%;
     max-width: 450px;
     height: auto;
     min-height: 650px;
+  } */
+
+  .flashcard-front,
+  .flashcard-back {
+    padding: 20px 15px; /* Moins de padding */
+    width: 100%;
+    box-sizing: border-box; /* Important pour éviter les débordements */
   }
 
-  .flashcard-front img {
-    height: 200px;
+  /* Image plus petite */
+  .image-frame {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-frame img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Titres plus petits */
+  .flashcard-front h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Question plus lisible */
+  .flashcard-front .question {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+
+  /* Boutons de réponse */
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .options button {
+    max-width: 100%;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    white-space: normal; /* Permet le retour à la ligne */
+    min-height: 50px;
+  }
+
+  /* Face arrière */
+  .flashcard-back h4 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .answer {
+    font-size: 1rem;
+  }
+
+  /* Bouton "En savoir +" */
+  .details-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+
+  /* Bouton "Rejouer" - IMPORTANT */
+  .retry-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    display: block; /* Force l'affichage */
+    width: auto;
+  }
+
+  .retry-info {
+    font-size: 1rem;
+    margin: 15px 0;
   }
 }

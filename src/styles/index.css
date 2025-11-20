@@ -1,5 +1,9 @@
 /* index.css : styles globaux */
 
+* {
+  box-sizing: border-box; /* Important pour éviter les débordements */
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,6 +34,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 body {
@@ -40,6 +45,7 @@ body {
   background-color: #1a1a1a;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Empêche le scroll horizontal */
 }
 
 /* app-container pousse le footer en bas */
@@ -102,6 +108,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 /* ******** */
 /*  Footer  */
 /* ******** */
@@ -223,20 +230,20 @@ button:focus-visible {
 .about-container {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   background: #1a1a1a;
   color: #e5e5e5;
   font-family: "Playfair Display", serif;
   line-height: 1.6;
   gap: 2rem;
-  padding: 2rem;
+  padding: 1rem 10px;
 }
 
 .about-section {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 10px 0;
+  margin: 0;
   padding: 18px;
 }
 
@@ -272,7 +279,7 @@ button:focus-visible {
 }
 
 .about-caption {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #ccc;
   margin-top: 0.5rem;
   font-style: italic;
@@ -290,15 +297,61 @@ button:focus-visible {
   text-decoration: none;
 }
 
+/* ****************** */
+/*  RESPONSIVE DESIGN */
+/* ****************** */
+
 /* Media query pour petits écrans */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Page ABOUT */
   .about-section {
     flex-direction: column !important; /* texte et image l’un sous l’autre */
-    text-align: center;
+    text-align: start;
+    gap: 0.5rem;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .about-section .about-paragraph {
+    flex: 1;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 15px;
   }
 
   .about-image {
     margin: 0 auto;
+  }
+
+  .about-caption {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1;
+  }
+  .about-section .about-paragraph-final {
+    font-style: italic;
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .footer-links {
+    font-size: 1.1rem;
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+  }
+  .footer p {
+    font-size: 0.9rem;
   }
 }
 

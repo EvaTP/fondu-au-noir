@@ -34,7 +34,7 @@ export function useConfetti(trigger: boolean) {
     })();
   }, []);
 
-  // ✨ useEffect : Lance les confettis quand trigger devient true
+  // useEffect : lance les confettis quand trigger devient true
   useEffect(() => {
     if (trigger) {
       fireConfetti();
