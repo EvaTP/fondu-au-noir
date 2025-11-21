@@ -332,12 +332,143 @@ button:focus-visible {
   }
 
   /* Page ABOUT */
+  .about-container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
+    margin: 10px 0 20px 0;
+  }
+
+  /* Chaque section devient une colonne */
   .about-container .about-section {
-    flex-direction: column; /* texte et image l’un sous l’autre */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+    margin: 15px 0;
+  }
+
+  /* Section 1 : paragraphe d'abord, image ensuite */
+  .about-container .about-section.section-left .about-paragraph {
+    order: 1;
+  }
+
+  .about-container .about-section.section-left .about-figure {
+    order: 2;
+  }
+
+  /* Section 2 : paragraphe d'abord, image ensuite */
+  .about-container .about-section.section-right .about-paragraph {
+    order: 1;
+  }
+
+  .about-container .about-section.section-right .about-figure {
+    order: 2;
+  }
+
+  /* Styles des paragraphes */
+  .about-container .about-section .about-paragraph {
+    flex: none;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    padding: 0 5px;
+  }
+
+  .about-container .about-section .about-paragraph strong {
+    font-size: 1.6rem;
+  }
+
+  /* Styles des figures (conteneur image + caption) */
+  .about-container .about-section .about-figure {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Styles des images */
+  .about-container .about-section .about-figure .about-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 4px inset #f4f1ea;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Légendes des images */
+  .about-container .about-section .about-caption {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+
+  /* Liste à puces */
+  .about-container .about-section ul {
+    padding-left: 20px;
+    margin: 15px 0;
+  }
+
+  .about-container .about-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  /* Paragraphe final */
+  .about-container .about-section .about-paragraph-final {
+    font-style: italic;
+    font-size: 1.3rem;
+    padding: 15px 10px;
+    margin-top: 0;
+    line-height: 1.4;
+  }
+
+  .about-container .about-paragraph-final a {
+    color: #ffd700;
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  .footer-links {
+    font-size: 1.1rem;
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* .about-container .about-section {
+    display: flex;
+    flex-direction: column; 
     text-align: start;
     gap: 0.2rem;
     padding: 10px;
     margin: 5px 0;
+  } */
+/* Section 1 : paragraphe en haut (order: 1), image en bas (order: 2) */
+/* .about-container .about-section.section-left .about-paragraph {
+    order: 1;
+  }
+  .about-container .about-section.section-left .about-figure {
+    order: 2;
+  } */
+/* Section 2 : paragraphe en haut (order: 1), image en bas (order: 2) */
+/* .about-container .about-section.section-right .about-paragraph {
+    order: 1;
+  }
+  .about-container .about-section.section-right .about-figure {
+    order: 2;
   }
 
   .about-section .about-paragraph {
@@ -353,26 +484,42 @@ button:focus-visible {
     .about-section
     .section-right
     .about-figure {
-    flex: 1;
+    flex: none;
     text-align: center;
     width: 100%;
     margin: 0;
   }
-  .about-section .about-image {
+  .about-container .about-section .about-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
     margin: 0 auto;
     border: 6px inset #f4f1ea;
     border-radius: 8px;
     padding: 0;
   }
 
-  .about-caption {
+  .about-container .about-section .about-caption {
     font-size: 1.2rem;
     color: #ccc;
     margin-top: 0.5rem;
     font-style: italic;
     line-height: 1;
+  } */
+
+/* Liste à puces */
+/* .about-container .about-section ul {
+    padding-left: 20px;
+    margin: 15px 0;
   }
-  .about-section .about-paragraph-final {
+  .about-container .about-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .about-container .about-section .about-paragraph-final {
     font-style: italic;
     font-size: 1.5rem;
     padding: 0 20px;
@@ -387,8 +534,7 @@ button:focus-visible {
   }
   .footer p {
     font-size: 0.9rem;
-  }
-}
+  }*/
 
 @media (prefers-color-scheme: light) {
   :root {
