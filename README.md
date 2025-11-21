@@ -50,10 +50,10 @@ Ce projet utilise plusieurs hooks React pour gérer l’état global, les effets
 - `useRef` : gestion de la référence de la modale pour le focus et l'accessibilité, ainsi que pour contrôler les interactions clavier.
 - `useNavigate` : gestion de la navigation entre les pages (ex. retour au quiz depuis la page Scoreboard).
 - `useCallback` : mémorisation de la fonction de lancement des confettis pour éviter qu’elle ne soit recréée à chaque rendu (optimisation des performances).
+- `useLocation` : renvoie la route actuelle (pathname) et permet de détecter chaque changement de page dans l’application React Router.
 - Hooks personnalisés :
   - `useConfetti` : déclenchement des confettis à l'arrivée sur la page Scoreboard. 🎉
   - `useScore` (contexte) : partage et gestion globale du score et des réponses correctes entre les composants.✅
-  - `useLocation` : renvoie la route actuelle (pathname) et permet de détecter chaque changement de page dans l’application React Router.
 
 ### Images & Icônes
 
