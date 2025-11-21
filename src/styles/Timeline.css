@@ -1,3 +1,7 @@
+/* ********** */
+/*  DESKTOP   */
+/* ********** */
+
 /* ************************** */
 /*  Timeline container global */
 /* ************************** */
@@ -218,7 +222,22 @@
 /*  RESPONSIVE DESIGN */
 /* ****************** */
 
+/* Breakpoint intermédiaire pour tablettes */
+/* *************************************** */
+@media (max-width: 1200px) {
+  .timeline-container {
+    max-width: 100%;
+  }
+  .timeline-item .flashcard.left {
+    right: calc(50% + 80px);
+  }
+  .timeline-item .flashcard.right {
+    left: calc(50% + 60px);
+  }
+}
+
 /* Breakpoint pour tel mobiles */
+/* *************************** */
 @media (max-width: 768px) {
   .timeline-container {
     /* padding-top: 140px; */
@@ -255,26 +274,30 @@
   }
 
   /* Container de chaque item */
-  .timeline-item {
+  .timeline-container .timeline-item {
     flex-direction: column;
     align-items: flex-start;
     margin-left: 0; /* Enlève la marge gauche */
+    margin-right: 0; /* Enlève la marge droite */
     margin-bottom: 120px;
     margin-top: 60px;
     min-height: auto;
     padding-left: 90px; /* Espace pour la timeline à gauche */
-    padding-right: 15px;
+    padding-right: 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
   }
 
-  .timeline-item:last-child {
+  .timeline-container .timeline-item:last-child {
     margin-bottom: 100px;
   }
 
   /* Années à gauche de la timeline */
   /* Année */
-  .timeline-year {
+  .timeline-item .timeline-year {
     position: absolute;
-    left: 50px; /* Juste à droite du dot */
+    left: 80px; /* Juste à droite du dot */
     top: -5px;
     right: auto;
     transform: none;
@@ -302,8 +325,8 @@
   }
 
   /* FlashCards toutes à droite de la timeline */
-  .timeline-item .flashcard.left,
-  .timeline-item .flashcard.right {
+  .timeline-container .timeline-item .flashcard.left,
+  .timeline-container .timeline-item .flashcard.right {
     position: relative; /* Important : relative pas static */
     left: 0;
     right: 0;
@@ -332,18 +355,5 @@
     max-width: 350px;
     font-size: 1.5rem;
     padding: 20px 30px;
-  }
-}
-
-/* Breakpoint intermédiaire pour tablettes */
-@media (max-width: 1200px) {
-  .timeline-container {
-    max-width: 100%;
-  }
-  .timeline-item .flashcard.left {
-    right: calc(50% + 80px);
-  }
-  .timeline-item .flashcard.right {
-    left: calc(50% + 60px);
   }
 }

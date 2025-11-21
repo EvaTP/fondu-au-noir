@@ -53,6 +53,7 @@ Ce projet utilise plusieurs hooks React pour gérer l’état global, les effets
 - Hooks personnalisés :
   - `useConfetti` : déclenchement des confettis à l'arrivée sur la page Scoreboard. 🎉
   - `useScore` (contexte) : partage et gestion globale du score et des réponses correctes entre les composants.✅
+  - `useLocation` : renvoie la route actuelle (pathname) et permet de détecter chaque changement de page dans l’application React Router.
 
 ### Images & Icônes
 

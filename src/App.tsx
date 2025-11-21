@@ -1,5 +1,10 @@
 // src/App.tsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
@@ -9,6 +14,17 @@ import Scoreboard from "@/pages/Scoreboard";
 import IntroScreen from "@/pages/IntroScreen";
 import { useScore } from "@/context/ScoreContext";
 import "@/styles/App.css";
+
+// Composant pour scroller en haut à chaque changement de route
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+}
 
 function App() {
   const { setTotalQuestions } = useScore();
@@ -20,6 +36,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <div className="main-content">
           <Routes>
