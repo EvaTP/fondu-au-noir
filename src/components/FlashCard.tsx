@@ -1,4 +1,5 @@
-import { useState } from "react";
+// src/components/FlashCard.tsx
+import { useState, useRef } from "react";
 import { motion, easeOut } from "framer-motion";
 import type { Film } from "@/types/Film";
 import "@/styles/FlashCard.css";
@@ -8,6 +9,8 @@ interface FlashCardProps {
   film: Film;
   onCorrect: () => void;
   onAnswer: () => void;
+  onQuestionAnswered: (isCorrect: boolean, modalIsOpen: boolean) => void;
+  onModalClose: (isCorrect: boolean) => void;
   position: "left" | "right";
   index: number; // pour gérer le délai d'apparition de la première carte
 }
@@ -16,6 +19,8 @@ export default function FlashCard({
   film,
   onCorrect,
   onAnswer,
+  onQuestionAnswered,
+  onModalClose,
   position,
   index,
 }: FlashCardProps) {
@@ -26,29 +31,74 @@ export default function FlashCard({
   // Modale
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // référence pour stocker le timer
+  const scrollTimerRef = useRef<number | null>(null);
+
+  const isCorrect = selectedOption === film.answer;
+  const canRetry = attempts === 1 && !hasAnsweredCorrectly;
+  const isLastAttemptFailed = attempts === 2 && !hasAnsweredCorrectly;
+
+  // useEffect pour signaler à la Timeline la fin de la question si dernière tentative échouée
+  // useEffect(() => {
+  //   if (isLastAttemptFailed) {
+  //     onQuestionAnswered();
+  //   }
+  // }, [isLastAttemptFailed, onQuestionAnswered]);
+
   const handleClick = (option: string) => {
     setSelectedOption(option);
     setFlipped(true);
     setAttempts((prev) => prev + 1);
     onAnswer(); // informe la Timeline que le joueur a commencé
 
-    if (option === film.answer) {
+    const correct = option === film.answer;
+
+    if (correct) {
       setHasAnsweredCorrectly(true);
       onCorrect();
     }
-  };
+    // Signale à Timeline qu'une réponse a été donnée
+    // - Si bonne réponse : délai de 3 secondes (temps pour voir + cliquer "En savoir +")
+    // - Si 1ère tentative ratée : pas de scroll (on attend le 2e essai)
+    // - Si 2e tentative ratée : délai de 3 secondes
+    if (correct || attempts === 1) {
+      //stocker le timer dans la ref
+      scrollTimerRef.current = window.setTimeout(() => {
+        onQuestionAnswered(correct, false);
+      }, 4000); // 4 secondes pour lire et cliquer
+    }
 
-  const isCorrect = selectedOption === film.answer;
-  // On peut rejouer si c'est la première tentative (attempts === 1) et qu'on n'a pas trouvé
-  const canRetry = attempts === 1 && !hasAnsweredCorrectly;
-  // C'est la dernière tentative (2ème essai) qui a échoué
-  const isLastAttemptFailed = attempts === 2 && !hasAnsweredCorrectly;
+    // if (option === film.answer) {
+    //   setHasAnsweredCorrectly(true);
+    //   onCorrect();
+    //   onQuestionAnswered(); // informe la Timeline que la question a été répondue
+    // }
+  };
 
   const handleRetry = () => {
     setFlipped(false);
     setSelectedOption(null);
     // IMPORTANT : on ne reset PAS attempts, on garde le compteur
   };
+
+  const handleOpenModal = () => {
+    if (scrollTimerRef.current !== null) {
+      clearTimeout(scrollTimerRef.current);
+      scrollTimerRef.current = null;
+    }
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    // Informe Timeline que la modale est fermée
+    onModalClose(isCorrect);
+  };
+  // useEffect(() => {
+  //   if (isLastAttemptFailed) {
+  //     onQuestionAnswered();
+  //   }
+  // }, [isLastAttemptFailed, onQuestionAnswered]);
 
   // Configuration de l'animation d'entrée
   const slideVariants = {
@@ -113,6 +163,7 @@ export default function FlashCard({
             <>
               <p className="retry-info">
                 Il te reste <br />
+                <br />
                 <strong>1 tentative</strong>
               </p>
               <button className="retry-button" onClick={handleRetry}>
@@ -129,10 +180,7 @@ export default function FlashCard({
 
           {/* Bouton "En savoir +" pour ouvrir la modale */}
           {(isCorrect || isLastAttemptFailed) && (
-            <button
-              className="details-button"
-              onClick={() => setIsModalOpen(true)}
-            >
+            <button className="details-button" onClick={handleOpenModal}>
               📖 En savoir +
             </button>
           )}
@@ -142,7 +190,7 @@ export default function FlashCard({
       {/* MODALE avec détails du film */}
       <Modal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleCloseModal}
         title={`${film.title} (${film.year})`}
       >
         <p>
