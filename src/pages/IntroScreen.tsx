@@ -25,7 +25,7 @@ export default function IntroScreen() {
           Réponds aux questions avec attention, chaque indice compte.
           <br />
           Tu as le droit à une deuxième chance pour chaque question, mais
-          méfie-toi, les apparences sont souvent trompeuses...
+          méfie-toi,les apparences sont souvent trompeuses...
           <br />
           ... et à la fin, <em>tu connaitras la vérité !</em>
         </p>

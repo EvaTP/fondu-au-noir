@@ -314,7 +314,7 @@ button:focus-visible {
   color: #ffd700;
   text-decoration: none;
   font-weight: bold;
-  border-bottom: 1px dashed #ffd700;
+  /* border-bottom: 1px dashed #ffd700; */
   transition: color 0.3s ease;
 }
 .about-paragraph-final a:hover {
