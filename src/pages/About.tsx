@@ -7,21 +7,24 @@ const About: React.FC = () => {
 
       {/* Première section : texte à gauche, image à droite */}
       <div className="about-section section-left">
-        <p className="about-paragraph">
-          <strong>Bienvenue sur Fondu au Noir !</strong>
+        <div className="about-text-block">
+          <p className="about-paragraph">
+            <strong>Bienvenue sur Fondu au Noir !</strong>
+          </p>
           <br></br>
-          <br></br>
-          Ce projet de quiz est né d'une volonté de pratiquer React et ses
-          hooks.
-          <br></br>
-          <br></br>
-          Le quiz est dédié au cinéma noir et à ses figures : réalisateurs,
-          acteurs, scénaristes. Il explore les thématiques du <em>
-            film noir
-          </em>{" "}
-          et de son héritier, le <em>néo-noir</em> — deux genres fascinants
-          mêlant mystère, corruption et fatalité.
-        </p>
+
+          <p className="about-paragraph">
+            Ce projet de quiz est né d'une volonté de pratiquer React et ses
+            hooks.
+          </p>
+          <p className="about-paragraph">
+            Le quiz est dédié au cinéma noir et à ses figures : réalisateurs,
+            acteurs, scénaristes, chefs opérateurs... Il explore les thématiques
+            du <em>film noir</em> et de son héritier, le <em>néo-noir</em> —
+            deux genres fascinants mêlant mystère, corruption et fatalité.
+          </p>
+        </div>
+
         <figure className="about-figure">
           <img
             src="/maltese-falcon.jpg"
@@ -32,13 +35,6 @@ const About: React.FC = () => {
             Le Faucon maltais (1941) — John Huston
           </figcaption>
         </figure>
-
-        {/* <img
-          src="/maltese-falcon.jpg"
-          title="Le faucon maltais (1941) - John Huston"
-          alt="fim-maltesefalcon"
-          className="about-image"
-        /> */}
       </div>
 
       {/* Deuxième section : image à gauche, texte à droite */}
@@ -55,43 +51,47 @@ const About: React.FC = () => {
           </figcaption>
         </figure>
 
-        <p className="about-paragraph">
-          Le choix des vingt films du quiz est bien sûr subjectif : d’autres
-          titres tout aussi méritants auraient pu y figurer.<br></br>
-          Les films choisis partagent des éléments communs : détective privé ou
-          enquêteur, intrigue criminelle, ambiance trouble, scénario alambiqué
-          et personnages moralement ambigus.
-          <br />
-          <br />
-          Mais d’autres films, parfois moins connus, sont tout aussi pertinents
-          et mériteraient d’être explorés — le cinéma noir et le néo-noir
-          forment un territoire riche et vaste.
-          <br />
-          <br />
-          Pour aller plus loin, voici quelques ressources recommandées :
-          <ul>
-            <li>
-              <a
-                href="https://www.kdbuzz.com/?le-film-noir"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                KDBuzz — Dossier sur le film noir
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.britannica.com/art/film-noir"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Encyclopædia Britannica — Film noir (présentation historique)
-              </a>
-            </li>
-          </ul>
-          Ces sources offrent des perspectives historiques, analytiques et des
-          suggestions de visionnage si tu souhaites approfondir le sujet.
-        </p>
+        <div className="about-text-block">
+          <p className="about-paragraph">
+            Le choix de cette sélection de vingt films est forcément subjectif :
+            d’autres titres tout aussi méritants auraient pu y figurer.<br></br>
+            Les films retenus partagent une grammaire commune : détectives
+            privés désabusés, intrigues criminelles alambiquées, ambiances
+            troubles et personnages moralement ambigus.
+          </p>
+          <p className="about-paragraph">
+            Mais d’autres films, parfois moins connus, sont tout aussi
+            pertinents et mériteraient d’être explorés — le cinéma noir et le
+            néo-noir forment un territoire riche et vaste.
+          </p>
+          <p className="about-paragraph">
+            Pour aller plus loin, voici quelques ressources recommandées :
+            <ul>
+              <li>
+                <a
+                  href="https://www.kdbuzz.com/?le-film-noir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  KDBuzz — Dossier sur le film noir
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.britannica.com/art/film-noir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Encyclopædia Britannica — Film noir (présentation historique)
+                </a>
+              </li>
+            </ul>
+          </p>
+          <p className="about-paragraph">
+            Ces sources offrent des perspectives historiques, analytiques et des
+            suggestions de visionnage si tu souhaites approfondir le sujet.
+          </p>
+        </div>
       </div>
 
       {/* Troisième section */}
