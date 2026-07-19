@@ -1,19 +1,22 @@
 .flashcard-container {
   perspective: 1000px;
-  margin: 50px 0;
-  width: 300px;
+  margin: 0;
+  width: 500px;
 }
 
 .flashcard {
   position: relative;
   width: 500px;
-  height: 800px;
-  perspective: 1000px;
+  /* height: 800px; */
+  min-height: 820px;
+  height: auto; /* Permet à la carte de grandir si le texte est énorme */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  perspective: 1000px;
   cursor: pointer;
-  margin: 40px auto;
+  margin: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   perspective: 1000px;
 }
@@ -37,7 +40,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  min-height: 100%; /* Au minimum 100% de la carte, mais peut s'étirer */
+  height: auto;
   backface-visibility: hidden; /* Cache le dos pendant la rotation */
   top: 0;
   left: 0;
@@ -53,7 +58,7 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 1.2rem;
   text-align: center;
@@ -69,8 +74,11 @@
 
   /* Cadre photo vintage autour du conteneur */
   border: 12px solid #f4f1ea;
-  box-shadow: 0 0 0 2px #8b7355, 0 0 0 3px #d4c5a9,
-    inset 0 0 30px rgba(0, 0, 0, 0.15), 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 0 0 2px #8b7355,
+    0 0 0 3px #d4c5a9,
+    inset 0 0 30px rgba(0, 0, 0, 0.15),
+    0 8px 25px rgba(0, 0, 0, 0.4);
 
   border-radius: 2px;
   transform: rotate(-0.5deg);
@@ -241,7 +249,9 @@
     position: relative;
     left: 0;
     right: 0;
-    min-height: 850px;
+    /* min-height: 850px; */
+    height: auto; /* Indispensable pour écraser tout blocage */
+    min-height: 720px; /* baisser un peu la min-height sur mobile car les polices y sont plus petites */
   }
 
   .flashcard .flashcard-inner {

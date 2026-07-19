@@ -35,7 +35,7 @@
   position: absolute;
   top: -30px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* centrage vertical par le milieu */
   font-size: 4rem;
   background: #1a1a1a;
   padding: 20px 35px;
@@ -67,10 +67,10 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 200px;
-  margin-top: 190px;
-  min-height: 750px;
-  z-index: 1;
+  margin-bottom: 700px;
+  margin-top: 100px;
+  min-height: 200px;
+  z-index: 10;
 }
 
 /* dernière flashcard */
@@ -124,16 +124,17 @@
 /* à gauche : items impairs */
 .timeline-item .flashcard.left {
   position: absolute;
-  right: calc(50% + 120px);
-  top: 0;
-  transform: translateY(0); /* pas de centrage vertical */
+  right: calc(50% + 50px);
+  top: 20px;
+  /* transform: translateY(0); */
+  transform: none;
 }
 /* à droite : items pairs */
 .timeline-item .flashcard.right {
   position: absolute;
-  left: calc(50% + 90px); /* espace depuis le centre */
-  top: 0;
-  transform: translateY(0); /* pas de centrage vertical */
+  left: calc(50% + 50px);
+  top: 20px;
+  transform: none;
 }
 
 /* ****** */
